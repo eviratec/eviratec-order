@@ -30,9 +30,6 @@ form#OrderForm {
 }
 
 #AppId_Component {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
   margin-bottom: 48px;
   div.app-id-icon {
     display: flex;
@@ -81,12 +78,12 @@ form#OrderForm {
       }
     }
   }
-  div.app-id-name {
+  div.app-id-name,
+  div.text-input-wrapper {
     display: flex;
     flex: auto;
     position: relative;
     margin-top: 16px;
-    margin-left: 16px;
     span.character-limit {
       position: absolute;
       bottom: -16px;

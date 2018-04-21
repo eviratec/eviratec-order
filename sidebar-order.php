@@ -20,7 +20,7 @@
   <?php if (!is_page("payment")) : ?>
   <header>
     <div>
-      <h2>Mobile preview</h2>
+      <h2>Mobile Preview</h2>
     </div>
     <div style="flex:auto;"></div>
     <div class="app-preview-tabs">

@@ -133,6 +133,6 @@ function eviratec_register_site_feature_post_type () {
     'hierarchical'       => false,
     'supports'           => array( 'title', 'comments', 'editor' )
   );
-  register_post_type( 'eviratec_site_feature', $args );
+  register_post_type( 'site_feature', $args );
 
 }

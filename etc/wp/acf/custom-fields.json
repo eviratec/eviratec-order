@@ -70,7 +70,7 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "eviratec_app_feature"
+                    "value": "site_feature"
                 }
             ]
         ],

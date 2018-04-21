@@ -157,9 +157,14 @@
                     margin-right: 16px;
                   }
                 }
-                &.locations-line-item {
+                &.line-item {
+                  border-bottom: 1px solid rgba(0,0,0,0.12);
                   div.item-description {
-                    p.modules-included {
+                    span.tax-amount {
+                      font-size: 0.83em;
+                      color: rgba(0,0,0,0.57);
+                    }
+                    p.line-item-desc {
                       display: flex;
                       flex-wrap: wrap;
                       color: rgba(0,0,0,0.37);
@@ -172,15 +177,6 @@
                       span.included-module-display-name {
                         margin-left: 4px;
                       }
-                    }
-                  }
-                }
-                &.line-item {
-                  border-bottom: 1px solid rgba(0,0,0,0.12);
-                  div.item-description {
-                    span.tax-amount {
-                      font-size: 0.83em;
-                      color: rgba(0,0,0,0.57);
                     }
                   }
                 }

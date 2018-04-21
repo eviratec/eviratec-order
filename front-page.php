@@ -49,23 +49,23 @@
             <div class="spacer"></div>
             <div class="main-text">
               <h1>
-                Join the top global brands by using
-                <strong>LOKE</strong>
-                apps to drive new sales
+                <strong>Mobile-first</strong>
+                responsive online stores
+                by Eviratec
               </h1>
               <p>
-                Increase average speed and lower costs.
+                Increase organic leads and sales from mobile devices
               </p>
             </div>
             <div class="call-to-action">
               <div class="button-wrapper">
-                <a class="btn" href="/order/app-features">
-                  Try it for free!
+                <a class="btn" href="/order/step-1/">
+                  Build One Now
                 </a>
               </div>
               <div class="offer-text">
                 <p>
-                  Start building your own app
+                  It's free!
                 </p>
               </div>
             </div>
@@ -75,9 +75,9 @@
               <div class="smartphone-bg"></div>
             </div>
             <div class="hero-cta-container">
-              <a href="/order/app-features"
+              <a href="/order/step-1/"
                 title="Get started">
-                Start building your own app
+                Start building your web<br>store
                 <span class="material-icons">
                   chevron_right
                 </span>

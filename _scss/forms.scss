@@ -44,10 +44,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 55px;
-      min-width: 225px;
-      width: 225px;
-      max-width: 225px;
+      height: 48px;
+      min-width: 240px;
+      width: 240px;
+      max-width: 240px;
       text-indent: 999px;
       color: transparent;
       outline: none;
@@ -63,8 +63,8 @@
 
 button.btn.form-btn {
   @include order-card-box-shadow();
-  background-color: #fff;
-  color: rgba(0,0,0,0.87);
+  background-color: #1565C0;
+  color: rgba(255,255,255,1);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -72,14 +72,15 @@ button.btn.form-btn {
   font-size: 0.91em;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
-  border-radius: 10px;
+  border-radius: 2px;
   border: none;
-  min-width: 225px;
-  width: 225px;
-  max-width: 225px;
-  height: 55px;
+  min-width: 240px;
+  width: 240px;
+  max-width: 240px;
+  height: 48px;
   box-sizing: border-box;
   cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.12);
   span.material-icons {
     margin-right: 16px;
   }

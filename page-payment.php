@@ -68,7 +68,7 @@
 
   <?php
   $features = new WP_Query( array(
-    'post_type'      => 'eviratec_site_feature',
+    'post_type'      => 'site_feature',
     'posts_per_page' => -1,
     'meta_key'       => 'feature_display_order',
     'orderby'        => 'meta_value',
@@ -121,6 +121,10 @@
                   <p>
                     Setup cost
                   </p>
+                  <p class="line-item-desc">
+                    <span class="label">Includes:</span>
+                    WordPress Set-up, WooCommerce Set-up, Custom Theme Dev, and SSL Installation
+                  </p>
                 </div>
                 <div class="item-price normal-price">
 
@@ -137,10 +141,10 @@
                 </div>
               </li>
 
-              <li class="line-item locations-line-item">
+              <li class="line-item site-line-item">
                 <div class="item-description">
-                  <p><span class="locations-num"></span>x Email Account(s)</p>
-                  <p class="modules-included">
+                  <p>1x Mobile-first Responsive Online Store</p>
+                  <p class="line-item-desc">
                     <span class="label">Features included:</span>
                     <?php $i = 0; ?>
                     <?php if ($features->have_posts()) : ?>
@@ -156,6 +160,18 @@
                       <?php endwhile; ?>
                       <?php wp_reset_postdata(); ?>
                     <?php endif; ?>
+                  </p>
+                </div>
+                <div class="item-price">
+                  &dollar;<span class="amount">99.00</span>
+                </div>
+              </li>
+
+              <li class="line-item locations-line-item">
+                <div class="item-description">
+                  <p><span class="locations-num"></span>x Email Account(s)</p>
+                  <p class="line-item-desc">
+                    Provided by Gmail + Google Apps
                   </p>
                 </div>
                 <div class="item-price">

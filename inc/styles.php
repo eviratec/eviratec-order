@@ -36,7 +36,7 @@ function eviratec_enqueue_styles () {
       "eviratec-online-order",
       get_stylesheet_uri(),
       array(),
-      "1.0.0"
+      "1.0.3"
     );
   }
 }

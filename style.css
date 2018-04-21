@@ -13,10 +13,6 @@ Text Domain: eviratecorder
 Eviratec Online Order WordPress Theme © 2018 Callan Peter Milne
 */
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -106,10 +102,6 @@ h1, h2, h3 {
   font-weight: 700;
   src: url("fonts/ProximaNova-ExtraBold.woff2") format("woff2"); }
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -149,10 +141,10 @@ h1, h2, h3 {
       left: 0;
       right: 0;
       bottom: 0;
-      height: 55px;
-      min-width: 225px;
-      width: 225px;
-      max-width: 225px;
+      height: 48px;
+      min-width: 240px;
+      width: 240px;
+      max-width: 240px;
       text-indent: 999px;
       color: transparent;
       outline: none;
@@ -164,8 +156,8 @@ h1, h2, h3 {
 
 button.btn.form-btn {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #1565C0;
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -173,24 +165,21 @@ button.btn.form-btn {
   font-size: 0.91em;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
-  border-radius: 10px;
+  border-radius: 2px;
   border: none;
-  min-width: 225px;
-  width: 225px;
-  max-width: 225px;
-  height: 55px;
+  min-width: 240px;
+  width: 240px;
+  max-width: 240px;
+  height: 48px;
   box-sizing: border-box;
-  cursor: pointer; }
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.12); }
   button.btn.form-btn span.material-icons {
     margin-right: 16px; }
   button.btn.form-btn:active, button.btn.form-btn:hover, button.btn.form-btn:focus {
     color: rgba(0, 0, 0, 0.87); }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -216,9 +205,6 @@ form#OrderForm {
       font-weight: 300; }
 
 #AppId_Component {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
   margin-bottom: 48px; }
   #AppId_Component div.app-id-icon {
     display: flex;
@@ -259,19 +245,21 @@ form#OrderForm {
         max-height: 32px;
         line-height: 32px;
         margin: 16px; }
-  #AppId_Component div.app-id-name {
+  #AppId_Component div.app-id-name,
+  #AppId_Component div.text-input-wrapper {
     display: flex;
     flex: auto;
     position: relative;
-    margin-top: 16px;
-    margin-left: 16px; }
-    #AppId_Component div.app-id-name span.character-limit {
+    margin-top: 16px; }
+    #AppId_Component div.app-id-name span.character-limit,
+    #AppId_Component div.text-input-wrapper span.character-limit {
       position: absolute;
       bottom: -16px;
       right: 0px;
       font-size: 0.73em;
       color: rgba(0, 0, 0, 0.57); }
-    #AppId_Component div.app-id-name input {
+    #AppId_Component div.app-id-name input,
+    #AppId_Component div.text-input-wrapper input {
       font-size: 1.6em;
       width: 100%;
       border-width: 0 0 1px;
@@ -283,7 +271,8 @@ form#OrderForm {
       color: rgba(0, 0, 0, 0.87);
       transition: all 333ms;
       font-weight: 200; }
-      #AppId_Component div.app-id-name input:focus {
+      #AppId_Component div.app-id-name input:focus,
+      #AppId_Component div.text-input-wrapper input:focus {
         border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
 
 #container.order-step {
@@ -375,29 +364,29 @@ form#OrderForm {
   position: relative;
   z-index: 10; }
   #stepFooter button#OrderButton_Back {
-    height: 40px;
+    height: 48px;
     padding: 0 16px;
     font-size: 0.9em;
     text-transform: uppercase;
-    border-radius: 5px;
+    border-radius: 2px;
     background: transparent;
     cursor: pointer;
     border: 1px solid; }
   #stepFooter button#OrderButton_Skip {
-    height: 40px;
+    height: 48px;
     padding: 0 16px;
     font-size: 0.9em;
     text-transform: uppercase;
-    border-radius: 5px;
+    border-radius: 2px;
     background: transparent;
     cursor: pointer;
     border: 1px solid white; }
   #stepFooter button#OrderButton_Continue {
-    height: 40px;
+    height: 48px;
     padding: 0 16px;
     font-size: 0.9em;
     text-transform: uppercase;
-    border-radius: 5px;
+    border-radius: 2px;
     background: transparent;
     cursor: pointer;
     background: #1e2128;
@@ -405,10 +394,6 @@ form#OrderForm {
     border: 1px solid #1e2128; }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -435,7 +420,7 @@ form#OrderForm {
     width: 120px;
     border-right: 1px solid #616469;
     background-color: transparent;
-    background-image: url("img/loke-logo.png");
+    background-image: url("img/logo.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -505,10 +490,6 @@ form#OrderForm {
             color: white; }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -574,11 +555,11 @@ body.home.homepage {
               margin: 40px 0;
               align-items: center; }
               body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.call-to-action div.button-wrapper a.btn {
-                height: 40px;
+                height: 48px;
                 padding: 0 16px;
                 font-size: 0.9em;
                 text-transform: uppercase;
-                border-radius: 5px;
+                border-radius: 2px;
                 background: transparent;
                 cursor: pointer;
                 background: white;
@@ -673,10 +654,6 @@ body.home.homepage {
                 font-weight: 300; }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -714,10 +691,6 @@ body.home.homepage {
   100% {
     transform: rotate(360deg); } }
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -1176,10 +1149,6 @@ body.home.homepage {
           text-shadow: 0px 1px 5px black; }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -1265,11 +1234,11 @@ body.home.homepage {
           font-weight: 600;
           color: rgba(0, 0, 0, 0.87); }
       #PaymentModal .modal-content footer button#ProcessPayment {
-        height: 40px;
+        height: 48px;
         padding: 0 16px;
         font-size: 0.9em;
         text-transform: uppercase;
-        border-radius: 5px;
+        border-radius: 2px;
         background: transparent;
         cursor: pointer;
         background: #1e2128;
@@ -1324,30 +1293,30 @@ body.home.homepage {
           #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li div.item-price span.normal-price {
             text-decoration: line-through;
             margin-right: 16px; }
-        #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.locations-line-item div.item-description p.modules-included {
-          display: flex;
-          flex-wrap: wrap;
-          color: rgba(0, 0, 0, 0.37);
-          font-size: 0.77em;
-          margin-top: 4px;
-          letter-spacing: -0.03em; }
-          #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.locations-line-item div.item-description p.modules-included span.label {
-            text-transform: uppercase; }
-          #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.locations-line-item div.item-description p.modules-included span.included-module-display-name {
-            margin-left: 4px; }
         #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.line-item {
           border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
           #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.line-item div.item-description span.tax-amount {
             font-size: 0.83em;
             color: rgba(0, 0, 0, 0.57); }
+          #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.line-item div.item-description p.line-item-desc {
+            display: flex;
+            flex-wrap: wrap;
+            color: rgba(0, 0, 0, 0.37);
+            font-size: 0.77em;
+            margin-top: 4px;
+            letter-spacing: -0.03em; }
+            #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.line-item div.item-description p.line-item-desc span.label {
+              text-transform: uppercase; }
+            #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.line-item div.item-description p.line-item-desc span.included-module-display-name {
+              margin-left: 4px; }
         #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.lines-total {
           font-weight: 600; }
       #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-button-container button#ChoosePaymentMethod {
-        height: 40px;
+        height: 48px;
         padding: 0 16px;
         font-size: 0.9em;
         text-transform: uppercase;
-        border-radius: 5px;
+        border-radius: 2px;
         background: transparent;
         cursor: pointer;
         background: #1e2128;
@@ -1370,10 +1339,6 @@ body.home.homepage {
       flex-direction: column; }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -1412,10 +1377,6 @@ body.home.homepage {
   background-color: #fefde5 !important; }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -1515,10 +1476,6 @@ body.home.homepage {
         line-height: 1em; }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -1625,10 +1582,6 @@ body.home.homepage {
           background: transparent; }
 
 /**
- * Tidy Order
- *
- * Licensed to: LOKE Digital Pty. Ltd.
- *
  * Copyright (c) 2018 Callan Peter Milne
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -1763,6 +1716,21 @@ body.home.homepage {
             font-weight: 600;
             font-family: "Proxima Nova", sans-serif; }
 
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
 #AppCustomSidenav_Component div.custom-sidenav-links {
   margin-top: 32px; }
   #AppCustomSidenav_Component div.custom-sidenav-links ol {
@@ -1795,3 +1763,5 @@ body.home.homepage {
         font-weight: 200; }
         #AppCustomSidenav_Component div.custom-sidenav-links ol li input:focus {
           border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+
+/*# sourceMappingURL=style.css.map */

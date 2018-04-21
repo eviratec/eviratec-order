@@ -18,7 +18,7 @@ if ("/order/complete" === $_REQUEST["from-page"]) {
   $app_order_info = array(
     'post_title'    => wp_strip_all_tags($_REQUEST["order-id"]) . " (Additional Info)",
     'post_content'  => htmlentities(json_encode($_REQUEST)),
-    'post_type'     => 'eviratec_site_feature',
+    'post_type'     => 'eviratec_site_order',
     'post_status'   => 'publish',
     'post_author'   => 1,
     'post_category' => array()

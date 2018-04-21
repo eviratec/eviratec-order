@@ -39,19 +39,19 @@
         <?php
 
         $steps = array(
-          "app-features" => array(
+          "step-1" => array(
             "num" => 1,
             "class" => array(),
           ),
-          "app-colours-and-fonts" => array(
+          "step-2" => array(
             "num" => 2,
             "class" => array(),
           ),
-          "app-navigation" => array(
+          "step-3" => array(
             "num" => 3,
             "class" => array(),
           ),
-          "app-intro" => array(
+          "step-4" => array(
             "num" => 4,
             "class" => array(),
           ),
@@ -79,9 +79,9 @@
         <nav id="menu" role="navigation">
           <div class="step-navigation">
             <ol class="steps">
-              <li class="<?php echo join(" ", $steps["app-features"]["class"]); ?>">
-                <a href="/order/app-features">
-                  <span>App Features</span>
+              <li class="<?php echo join(" ", $steps["step-1"]["class"]); ?>">
+                <a href="/order/step-1">
+                  <span>Site Features</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
                     <span class="indicator">
@@ -91,9 +91,9 @@
                   </span>
                 </a>
               </li>
-              <li class="<?php echo join(" ", $steps["app-colours-and-fonts"]["class"]); ?>">
-                <a href="/order/app-colours-and-fonts">
-                  <span>Colours &amp; Fonts</span>
+              <li class="<?php echo join(" ", $steps["step-2"]["class"]); ?>">
+                <a href="/order/step-2">
+                  <span>Appearance</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
                     <span class="indicator">
@@ -103,9 +103,9 @@
                   </span>
                 </a>
               </li>
-              <li class="<?php echo join(" ", $steps["app-navigation"]["class"]); ?>">
-                <a href="/order/app-navigation">
-                  <span>Side Menu Bar</span>
+              <li class="<?php echo join(" ", $steps["step-3"]["class"]); ?>">
+                <a href="/order/step-3">
+                  <span>Navigation</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
                     <span class="indicator">
@@ -115,9 +115,9 @@
                   </span>
                 </a>
               </li>
-              <li class="<?php echo join(" ", $steps["app-intro"]["class"]); ?>">
-                <a href="/order/app-intro">
-                  <span>Welcome Screens</span>
+              <li class="<?php echo join(" ", $steps["step-4"]["class"]); ?>">
+                <a href="/order/step-4">
+                  <span>Your Details</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
                     <span class="indicator">

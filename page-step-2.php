@@ -55,7 +55,7 @@
 
   <div id="AppColorScheme_Component" class="form-component">
     <header>
-      <h2>Your colour scheme</h2>
+      <h2>Colour Scheme</h2>
       <div class="component-description">
         <p>Choose the colours that match your brand. See the results in the preview on the right.</p>
       </div>

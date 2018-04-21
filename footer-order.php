@@ -21,7 +21,7 @@
 </form>
 <footer id="footer" role="contentinfo">
   <div id="stepFooter">
-    <?php if (!is_page("app-features")) : ?>
+    <?php if (!is_page("step-1")) : ?>
       <div>
         <button id="OrderButton_Back"
           class="btn primary-btn">
@@ -32,10 +32,12 @@
     <div style="flex:auto;"></div>
     <div>
     <?php if (!is_page("payment")) : ?>
-      <button id="OrderButton_Skip"
-        class="btn primary-btn">
-        Skip
-      </button>
+      <?php if (!is_page("step-1") && !is_page("step-4")) : ?>
+        <button id="OrderButton_Skip"
+          class="btn primary-btn">
+          Skip
+        </button>
+      <?php endif; ?>
       <button id="OrderButton_Continue"
         class="btn primary-btn"
         type="submit">

@@ -52,73 +52,76 @@
   <?php endforeach; ?>
 
   <div id="AppId_Component" class="form-component">
-    <div class="app-id-icon image-upload">
-      <div class="app-icon-wrapper">
-        <div class="app-id-icon-placeholder">
-          <a title="Upload Icon">
-            <span class="material-icons">add_a_photo</span>
-          </a>
-        </div>
-        <div class="app-id-icon-image">
-          <img src="" style="height:64px;width:64px;">
-        </div>
-      </div>
-      <div class="icon-upload-advice">
-        512x512px
-      </div>
-    </div>
-    <script>
-    (function ($) {"use strict";
-      var appIconUrl = $("input[name=app-id-icon-url]").val();
-      if (appIconUrl) {
-        $("#AppId_Component div.app-id-icon-placeholder").hide();
-        $("#AppId_Component div.app-id-icon-image").load(function () {
-          $("#AppId_Component div.app-id-icon-image").show();
-        });
-        $("#AppId_Component div.app-id-icon-image img").attr(
-          "src",
-          appIconUrl
-        );
-        return;
-      }
-      $("#AppId_Component div.app-id-icon-image").hide();
-    })(jQuery);
-    </script>
-    <script>
-    (function ($) {"use strict";
-      $.taAssetUploadComponent({
-        id: "app-id-icon",
-        $el: $("#AppId_Component div.image-upload"),
-        showUi: false,
-        category: "icon",
-        initialValue: $("input[name=app-id-icon-url]").val(),
-        storageId: $("input[name=order-id]").val(),
-        onComplete: function (assetUrl) {
-          $("#AppId_Component div.app-id-icon-placeholder").hide();
-          $("#AppId_Component div.app-id-icon-image").show();
-          $("#AppId_Component div.app-id-icon-image img").attr("src", assetUrl);
-          $(document).trigger("tidy-form:update");
-        },
-      });
-    })(jQuery);
-    </script>
-    <div class="app-id-name">
+    <header>
+      <h2>Store Name</h2>
+    </header>
+    <div class="app-id-name text-input-wrapper">
       <input id="AppName_Input"
         name="app-name"
         value="<?php echo esc_attr( stripslashes( $_REQUEST["app-name"] ) ); ?>"
-        placeholder="Enter your app name"
-        maxlength="50">
+        placeholder="Enter your store name"
+        maxlength="75">
       <span class="character-limit">
-        50 char max.
+        75 char max.
       </span>
     </div>
   </div>
 
-  <h2>Select features</h2>
+  <div id="SiteIconImage_Component" class="form-component">
+    <header>
+      <h2>Icon Image</h2>
+      <div class="component-description">
+        <p>The image you would like to be used as the site icon. 512x512 pixels (jpg, png, ico) recommended.</p>
+      </div>
+    </header>
+    <!-- <p><?php echo $_REQUEST["site-icon-image-url"]; ?></p> -->
+    <div class="image-upload"></div>
+    <script>
+    (function ($) {"use strict";
+      $.taAssetUploadComponent({
+        id: "site-icon-image-url",
+        $el: $("#SiteIconImage_Component div.image-upload"),
+        category: "image",
+        initialValue: $("input[name=site-icon-image-url]").val(),
+        storageId: $("input[name=order-id]").val(),
+        onComplete: function (assetUrl) {
+          $(document).trigger("eviratec-form:update");
+        },
+      });
+    })(jQuery);
+    </script>
+  </div>
+
+  <div id="SiteLogoImage_Component" class="form-component">
+    <header>
+      <h2>Logo Image</h2>
+      <div class="component-description">
+        <p>The image you would like to be used as the site logo. 1024x256px pixels (jpg, png) recommended.</p>
+      </div>
+    </header>
+    <!-- <p><?php echo $_REQUEST["site-icon-image-url"]; ?></p> -->
+    <div class="image-upload"></div>
+    <script>
+    (function ($) {"use strict";
+      $.taAssetUploadComponent({
+        id: "site-logo-image-url",
+        $el: $("#SiteLogoImage_Component div.image-upload"),
+        category: "image",
+        initialValue: $("input[name=site-logo-image-url]").val(),
+        storageId: $("input[name=order-id]").val(),
+        onComplete: function (assetUrl) {
+          $(document).trigger("eviratec-form:update");
+        },
+      });
+    })(jQuery);
+    </script>
+  </div>
+
+  <h2>Features</h2>
 
   <?php
   $features = new WP_Query( array(
-    'post_type'      => 'eviratec_site_feature',
+    'post_type'      => 'site_feature',
     'posts_per_page' => -1,
     'meta_key'       => 'feature_display_order',
     'orderby'        => 'meta_value',
