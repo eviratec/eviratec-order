@@ -1,0 +1,78 @@
+/*
+Theme Name: Eviratec Order
+Theme URI: https://github.com/eviratec/eviratec-order
+Author: Callan Peter Milne
+Author URI: https://www.eviratec.com.au/
+Description:
+Version: 1.0.0
+License: UNLICENSED
+Tags: one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Text Domain: eviratecorder
+
+Eviratec Online Order WordPress Theme © 2018 Callan Peter Milne
+*/
+
+@mixin order-card-box-shadow() {
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+}
+
+@mixin standard-button () {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+}
+
+@mixin cta-button () {
+  @include standard-button();
+  background: rgb(30, 33, 40);
+  color: rgba(255,255,255,1);
+  border: 1px solid rgb(30, 33, 40);
+}
+
+@mixin form-input-decoration() {
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.12);
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  color: rgba(0,0,0,0.87);
+  transition: all 333ms;
+  font-weight: 200;
+  &:focus {
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+  }
+}
+
+@mixin vertical-card-container() {
+  list-style-type: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+
+@mixin vertical-card() {
+  @include order-card-box-shadow();
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+@import "_scss/common";
+
+@import "_scss/forms";
+@import "_scss/order";
+@import "_scss/toolbar";
+@import "_scss/homepage";
+@import "_scss/s3-upload";
+@import "_scss/app-preview";
+@import "_scss/payment-form";
+@import "_scss/stripe-payment";
+@import "_scss/app-onboarding";
+@import "_scss/app-color-scheme";
+@import "_scss/additional-details";
+@import "_scss/sidenav-link-manager";

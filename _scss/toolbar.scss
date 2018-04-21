@@ -1,0 +1,122 @@
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+.toolbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(30, 33, 40);
+  color: rgba(255,255,255,0.37);
+  height: 66px;
+  box-shadow: 0 2px 20px rgba(30, 33, 40,0.1);
+  position: relative;
+  .logo {
+    width: 120px;
+    border-right: 1px solid #616469;
+    background-color: transparent;
+    background-image: url("img/loke-logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    position: relative;
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .step-navigation {
+    ol.steps {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      li {
+        width: 180px;
+        text-align: center;
+        a {
+          display: block;
+          padding: 0 24px;
+          line-height: 66px;
+          color: rgba(255,255,255,0.3);
+          text-decoration: none;
+          letter-spacing: 0.05em;
+          font-size: 0.91em;
+          position: relative;
+          span.indicator-container {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            display: flex;
+            flex-direction: row;
+            z-index: 10;
+            span.indicator {
+              height: 20px;
+              width: 20px;
+              background-color: #1e2128;
+              border-radius: 99px;
+              box-shadow: 0px 1px 10px rgba(0,0,0,0.12);
+            }
+          }
+        }
+        &.current-step {
+          a {
+            color: rgba(255,255,255,0.95);
+            span.indicator-container {
+              span.indicator {
+                &:after {
+                  content: " ";
+                  height: 12px;
+                  width: 12px;
+                  margin: 4px;
+                  background-color: #fff;
+                  border-radius: 99px;
+                  position: absolute;
+                  left: 80px;
+                }
+                span.material-icons {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+        &.previous-step {
+          a {
+            color: rgba(255,255,255,0.7);
+            span.indicator-container {
+              span.indicator {
+                position: relative;
+                span.material-icons {
+                  position: absolute;
+                  font-size: 13px;
+                  top: 3px;
+                  left: 4px;
+                  color: rgba(255,255,255,1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

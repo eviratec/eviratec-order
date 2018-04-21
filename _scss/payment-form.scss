@@ -1,0 +1,222 @@
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+#PaymentModal {
+  /**
+  * https://www.w3schools.com/howto/howto_css_modals.asp
+  */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 600px; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    box-shadow: 2px 0px 20px 2px rgba(0,0,0,0.2);
+    header {
+      display: flex;
+      flex-direction: row;
+      padding: 24px 32px;
+      background-color: rgba(0,0,0,0.1);
+      align-items: center;
+      h2 {
+        flex: auto;
+        color: rgba(0,0,0,0.57);
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        &:hover,
+        &:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+    section.modal-body {
+      padding: 32px;
+      div#card-errors {
+        color: rgba(255,0,0,0.87);
+        margin-top: 16px;
+      }
+      p {
+        font-weight: 300;
+        margin-bottom: 32px;
+      }
+    }
+    footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 32px 32px;
+      div.payment-info {
+        flex: auto;
+        font-size: 1.4em;
+        font-weight: 300;
+        color: rgba(0,0,0,0.38);
+        span.total-amount {
+          font-weight: 600;
+          color: rgba(0,0,0,0.87);
+        }
+      }
+      button#ProcessPayment {
+        @include cta-button();
+      }
+    }
+  }
+}
+
+#PaymentForm {
+
+  div.payment-form-wrapper {
+
+    display: flex;
+    flex-direction: row;
+
+    div.payment-form {
+      flex: auto;
+      header {
+        margin-bottom: 56px;
+        h1 {
+          color: #1c1f25;
+          margin: 0 0 16px;
+          font-size: 1.4em;
+          font-weight: 800;
+        }
+        p {
+          font-weight: 300;
+          font-size: 1.1em;
+        }
+      }
+      section.order-form {
+        section {
+          margin: 40px 0;
+          width: 80%;
+          &.locations-config {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            div:first-of-type {
+              flex: auto;
+            }
+            div:last-of-type {
+              width: 80px;
+              input {
+                max-width: 100%;
+                text-align: center;
+                font-size: 1.1em;
+                line-height: 48px;
+                background: rgba(0,0,0,0.06);
+                border: none;
+                border-radius: 4px;
+              }
+            }
+          }
+          &.order-line-items {
+            ul.line-items {
+              li {
+                display: flex;
+                flex-direction: row;
+                padding: 16px 0;
+                font-weight: 300;
+                div.item-description {
+                  flex: auto;
+
+                }
+                div.item-price {
+                  width: 200px;
+                  text-align: right;
+                  font-size: 1.1em;
+                  span.normal-price {
+                    text-decoration: line-through;
+                    margin-right: 16px;
+                  }
+                }
+                &.locations-line-item {
+                  div.item-description {
+                    p.modules-included {
+                      display: flex;
+                      flex-wrap: wrap;
+                      color: rgba(0,0,0,0.37);
+                      font-size: 0.77em;
+                      margin-top: 4px;
+                      letter-spacing: -0.03em;
+                      span.label {
+                        text-transform: uppercase;
+                      }
+                      span.included-module-display-name {
+                        margin-left: 4px;
+                      }
+                    }
+                  }
+                }
+                &.line-item {
+                  border-bottom: 1px solid rgba(0,0,0,0.12);
+                  div.item-description {
+                    span.tax-amount {
+                      font-size: 0.83em;
+                      color: rgba(0,0,0,0.57);
+                    }
+                  }
+                }
+                &.lines-total {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+          &.order-button-container {
+            button#ChoosePaymentMethod {
+              @include cta-button();
+            }
+            p {
+              font-weight: 300;
+              font-size: 0.83em;
+              margin-top: 16px;
+              color: rgba(0,0,0,0.57);
+            }
+          }
+        }
+      }
+    }
+    div.app-preview {
+      width: 550px;
+      display: flex;
+      #AppPreviewWrapper {
+        width: 350px;
+        min-width: 350px;
+        max-width: 350px;
+        border-left: none;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+  }
+
+}

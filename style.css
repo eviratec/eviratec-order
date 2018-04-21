@@ -1,0 +1,1797 @@
+@charset "UTF-8";
+/*
+Theme Name: Eviratec Order
+Theme URI: https://github.com/eviratec/eviratec-order
+Author: Callan Peter Milne
+Author URI: https://www.eviratec.com.au/
+Description:
+Version: 1.0.0
+License: UNLICENSED
+Tags: one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Text Domain: eviratecorder
+
+Eviratec Online Order WordPress Theme © 2018 Callan Peter Milne
+*/
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  font-size: 100%;
+  font: inherit;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  vertical-align: baseline; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+.clear {
+  clear: both; }
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important; }
+
+html, body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  -webkit-user-select: none;
+  color: rgba(0, 0, 0, 0.87);
+  overflow: hidden; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+h1, h2 {
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 500; }
+
+h1, h2, h3 {
+  color: #1e2128; }
+
+#wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 100;
+  src: url("fonts/ProximaNova-Light.woff2") format("woff2"); }
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 300;
+  src: url("fonts/ProximaNova-Regular.woff2") format("woff2"); }
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 500;
+  src: url("fonts/ProximaNova-Bold.woff2") format("woff2"); }
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  src: url("fonts/ProximaNova-ExtraBold.woff2") format("woff2"); }
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+.form-component {
+  margin-bottom: 40px; }
+  .form-component header p {
+    margin-top: 16px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.57);
+    font-size: 0.91em;
+    line-height: 1.4em; }
+  .form-component header .component-description {
+    display: flex;
+    flex-direction: row; }
+    .form-component header .component-description label {
+      color: rgba(0, 0, 0, 0.87); }
+  .form-component .file-upload-component {
+    margin-top: 32px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .form-component .file-upload-component input[type=file] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 55px;
+      min-width: 225px;
+      width: 225px;
+      max-width: 225px;
+      text-indent: 999px;
+      color: transparent;
+      outline: none;
+      cursor: pointer; }
+    .form-component .file-upload-component .upload-details {
+      font-size: 0.9em;
+      font-weight: 300;
+      margin: 0 16px; }
+
+button.btn.form-btn {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 0.91em;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  border-radius: 10px;
+  border: none;
+  min-width: 225px;
+  width: 225px;
+  max-width: 225px;
+  height: 55px;
+  box-sizing: border-box;
+  cursor: pointer; }
+  button.btn.form-btn span.material-icons {
+    margin-right: 16px; }
+  button.btn.form-btn:active, button.btn.form-btn:hover, button.btn.form-btn:focus {
+    color: rgba(0, 0, 0, 0.87); }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+form#OrderForm {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto; }
+  form#OrderForm ul.order-summary li {
+    margin-top: 8px; }
+    form#OrderForm ul.order-summary li h4 {
+      font-size: 1.1em;
+      font-weight: 300; }
+
+#AppId_Component {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  margin-bottom: 48px; }
+  #AppId_Component div.app-id-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 0;
+    margin-top: 0; }
+    #AppId_Component div.app-id-icon .icon-upload-advice {
+      font-size: 0.87em;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.38);
+      margin-top: 16px; }
+    #AppId_Component div.app-id-icon .app-icon-wrapper {
+      color: rgba(0, 0, 0, 0.58);
+      display: flex;
+      height: 64px;
+      width: 64px;
+      box-sizing: border-box;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 9px 30px rgba(0, 0, 0, 0.24);
+      transition: all 333ms;
+      cursor: pointer;
+      text-decoration: none; }
+      #AppId_Component div.app-id-icon .app-icon-wrapper:hover {
+        box-shadow: 0 9px 30px rgba(0, 0, 0, 0.36);
+        color: rgba(0, 0, 0, 0.87); }
+      #AppId_Component div.app-id-icon .app-icon-wrapper .app-id-icon-image img {
+        height: 64px;
+        width: 64px; }
+      #AppId_Component div.app-id-icon .app-icon-wrapper .app-id-icon-placeholder .material-icons {
+        font-size: 32px;
+        height: 32px;
+        width: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        max-width: 32px;
+        max-height: 32px;
+        line-height: 32px;
+        margin: 16px; }
+  #AppId_Component div.app-id-name {
+    display: flex;
+    flex: auto;
+    position: relative;
+    margin-top: 16px;
+    margin-left: 16px; }
+    #AppId_Component div.app-id-name span.character-limit {
+      position: absolute;
+      bottom: -16px;
+      right: 0px;
+      font-size: 0.73em;
+      color: rgba(0, 0, 0, 0.57); }
+    #AppId_Component div.app-id-name input {
+      font-size: 1.6em;
+      width: 100%;
+      border-width: 0 0 1px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.12);
+      background-color: transparent;
+      font-family: "Roboto", sans-serif;
+      outline: none;
+      color: rgba(0, 0, 0, 0.87);
+      transition: all 333ms;
+      font-weight: 200; }
+      #AppId_Component div.app-id-name input:focus {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+
+#container.order-step {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto; }
+  #container.order-step div.step-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex: auto; }
+    #container.order-step div.step-wrapper section.step {
+      flex: auto;
+      background-color: #f7f7f7;
+      padding: 48px;
+      overflow-y: scroll;
+      overflow-x: hidden; }
+      #container.order-step div.step-wrapper section.step h2 {
+        font-size: 1.4em;
+        font-weight: 500; }
+      #container.order-step div.step-wrapper section.step div.app-name-info {
+        display: flex;
+        flex-direction: row; }
+      #container.order-step div.step-wrapper section.step ol.feature-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 24px 0 0; }
+        #container.order-step div.step-wrapper section.step ol.feature-list li.feature {
+          cursor: pointer; }
+          #container.order-step div.step-wrapper section.step ol.feature-list li.feature.feature-selected div.feature-card {
+            background-color: #1e2128;
+            color: white; }
+            #container.order-step div.step-wrapper section.step ol.feature-list li.feature.feature-selected div.feature-card div.feature-card-content .feature header h3 {
+              color: white; }
+            #container.order-step div.step-wrapper section.step ol.feature-list li.feature.feature-selected div.feature-card div.feature-card-content .feature div.feature-description p {
+              color: rgba(255, 255, 255, 0.7); }
+          #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card {
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+            background: #fff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 12px;
+            overflow: hidden;
+            position: relative; }
+            #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content {
+              display: flex;
+              flex-direction: row;
+              align-items: center; }
+              #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature-toggle {
+                padding: 0 16px 0 36px; }
+                #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature-toggle input[type=checkbox] {
+                  position: absolute;
+                  left: -999px; }
+                #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature-toggle span.material-icons.feature-selected {
+                  color: #03A9F4; }
+              #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature-icon {
+                padding: 0 36px 0 16px;
+                width: 100px;
+                box-sizing: border-box; }
+              #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature {
+                display: flex;
+                flex-direction: column;
+                flex: auto; }
+                #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature header {
+                  display: flex;
+                  flex-direction: row;
+                  padding-top: 24px;
+                  padding-bottom: 8px; }
+                  #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature header h3 {
+                    margin: 0;
+                    font-weight: 400; }
+                #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature div.feature-description {
+                  padding: 0 24px 24px 0;
+                  height: 36px; }
+                  #container.order-step div.step-wrapper section.step ol.feature-list li.feature div.feature-card div.feature-card-content .feature div.feature-description p {
+                    margin: 0;
+                    font-size: 0.9em;
+                    color: rgba(0, 0, 0, 0.38);
+                    font-weight: 300;
+                    line-height: 1.3em; }
+
+#stepFooter {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10; }
+  #stepFooter button#OrderButton_Back {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid; }
+  #stepFooter button#OrderButton_Skip {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid white; }
+  #stepFooter button#OrderButton_Continue {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    background: #1e2128;
+    color: white;
+    border: 1px solid #1e2128; }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+.toolbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: #1e2128;
+  color: rgba(255, 255, 255, 0.37);
+  height: 66px;
+  box-shadow: 0 2px 20px rgba(30, 33, 40, 0.1);
+  position: relative; }
+  .toolbar-wrapper .logo {
+    width: 120px;
+    border-right: 1px solid #616469;
+    background-color: transparent;
+    background-image: url("img/loke-logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    position: relative; }
+    .toolbar-wrapper .logo a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; }
+  .toolbar-wrapper .step-navigation ol.steps {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0.8em;
+    text-transform: uppercase; }
+    .toolbar-wrapper .step-navigation ol.steps li {
+      width: 180px;
+      text-align: center; }
+      .toolbar-wrapper .step-navigation ol.steps li a {
+        display: block;
+        padding: 0 24px;
+        line-height: 66px;
+        color: rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        font-size: 0.91em;
+        position: relative; }
+        .toolbar-wrapper .step-navigation ol.steps li a span.indicator-container {
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          right: 0;
+          height: 20px;
+          display: flex;
+          flex-direction: row;
+          z-index: 10; }
+          .toolbar-wrapper .step-navigation ol.steps li a span.indicator-container span.indicator {
+            height: 20px;
+            width: 20px;
+            background-color: #1e2128;
+            border-radius: 99px;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12); }
+      .toolbar-wrapper .step-navigation ol.steps li.current-step a {
+        color: rgba(255, 255, 255, 0.95); }
+        .toolbar-wrapper .step-navigation ol.steps li.current-step a span.indicator-container span.indicator:after {
+          content: " ";
+          height: 12px;
+          width: 12px;
+          margin: 4px;
+          background-color: #fff;
+          border-radius: 99px;
+          position: absolute;
+          left: 80px; }
+        .toolbar-wrapper .step-navigation ol.steps li.current-step a span.indicator-container span.indicator span.material-icons {
+          display: none; }
+      .toolbar-wrapper .step-navigation ol.steps li.previous-step a {
+        color: rgba(255, 255, 255, 0.7); }
+        .toolbar-wrapper .step-navigation ol.steps li.previous-step a span.indicator-container span.indicator {
+          position: relative; }
+          .toolbar-wrapper .step-navigation ol.steps li.previous-step a span.indicator-container span.indicator span.material-icons {
+            position: absolute;
+            font-size: 13px;
+            top: 3px;
+            left: 4px;
+            color: white; }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+body.home.homepage {
+  overflow-y: auto; }
+  body.home.homepage div#wrapper {
+    display: flex;
+    flex-direction: column; }
+    body.home.homepage div#wrapper header#header section#branding div.toolbar-wrapper div.logo {
+      border-right: none; }
+    body.home.homepage div#wrapper div#Homepage {
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+      min-height: 800px; }
+      body.home.homepage div#wrapper div#Homepage section {
+        display: flex;
+        flex-direction: row; }
+        body.home.homepage div#wrapper div#Homepage section div.spacer {
+          flex: auto; }
+        body.home.homepage div#wrapper div#Homepage section div.content-area {
+          width: 1000px; }
+      body.home.homepage div#wrapper div#Homepage section.hero {
+        background: #1d2129;
+        height: 520px;
+        color: white; }
+        body.home.homepage div#wrapper div#Homepage section.hero div.content-area {
+          display: flex;
+          flex-direction: row; }
+          body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper {
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            flex: auto;
+            padding-right: 40px; }
+            body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.main-text {
+              margin-bottom: 56px; }
+              body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.main-text h1 {
+                color: white;
+                font-size: 3em;
+                margin-bottom: 24px;
+                font-weight: 300;
+                line-height: 1.1em; }
+                body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.main-text h1 strong {
+                  font-weight: 600; }
+              body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.main-text p {
+                font-weight: 300;
+                font-size: 1.4em; }
+            body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.call-to-action {
+              display: flex;
+              flex-direction: row;
+              margin: 40px 0;
+              align-items: center; }
+              body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.call-to-action div.button-wrapper a.btn {
+                height: 40px;
+                padding: 0 16px;
+                font-size: 0.9em;
+                text-transform: uppercase;
+                border-radius: 5px;
+                background: transparent;
+                cursor: pointer;
+                background: white;
+                color: rgba(0, 0, 0, 0.87);
+                border: none;
+                display: inline-block;
+                line-height: 56px;
+                text-decoration: none;
+                text-transform: none;
+                height: 56px;
+                font-size: 1.2em;
+                padding: 0 40px; }
+              body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.call-to-action div.offer-text {
+                flex: auto;
+                margin: 0 20px; }
+                body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.call-to-action div.offer-text p {
+                  font-size: 1.1em; }
+          body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.smartphone {
+            display: flex;
+            position: relative; }
+            body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.smartphone .hero-cta-container {
+              position: absolute;
+              top: 160px;
+              right: -80px; }
+              body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.smartphone .hero-cta-container a {
+                background-color: #00a0ff;
+                border-radius: 999px;
+                height: 160px;
+                width: 160px;
+                display: block;
+                text-align: center;
+                padding: 29px 14px 0;
+                box-sizing: border-box;
+                color: white;
+                text-decoration: none;
+                font-size: 1.6em;
+                font-weight: 300;
+                box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.5);
+                border: 2px solid; }
+                body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.smartphone .hero-cta-container a .material-icons {
+                  font-size: 32px;
+                  line-height: 32px;
+                  height: 32px;
+                  width: 32px;
+                  min-height: 32px;
+                  min-width: 32px;
+                  max-height: 32px;
+                  max-width: 32px;
+                  display: inline;
+                  vertical-align: middle;
+                  margin-left: -8px; }
+            body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.smartphone div.smartphone-image {
+              background-color: transparent;
+              background-image: url("img/iphone.png");
+              background-size: 326.5px 660px;
+              background-position: center;
+              width: 326.5px;
+              height: 660px; }
+              body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.smartphone div.smartphone-image div.smartphone-bg {
+                background-image: url("img/homepage-phone-bg.png");
+                background-size: cover;
+                background-position: center;
+                height: 497px;
+                width: 279px;
+                margin: 80px 0px 0px 22px; }
+      body.home.homepage div#wrapper div#Homepage section.main {
+        flex: auto; }
+        body.home.homepage div#wrapper div#Homepage section.main .testimonial-list {
+          margin-top: 24px; }
+          body.home.homepage div#wrapper div#Homepage section.main .testimonial-list .testimonial .testimonial-card-content {
+            display: flex; }
+            body.home.homepage div#wrapper div#Homepage section.main .testimonial-list .testimonial .testimonial-card-content .testimonial-icon {
+              margin: 16px 32px 16px 0;
+              border-radius: 9999px;
+              overflow: hidden; }
+            body.home.homepage div#wrapper div#Homepage section.main .testimonial-list .testimonial .testimonial-card-content .testimonial {
+              display: flex;
+              flex-direction: column;
+              flex: auto; }
+              body.home.homepage div#wrapper div#Homepage section.main .testimonial-list .testimonial .testimonial-card-content .testimonial header {
+                padding: 24px 0 8px; }
+                body.home.homepage div#wrapper div#Homepage section.main .testimonial-list .testimonial .testimonial-card-content .testimonial header h3 {
+                  font-size: 0.9em;
+                  color: rgba(0, 0, 0, 0.57);
+                  font-weight: 300; }
+                  body.home.homepage div#wrapper div#Homepage section.main .testimonial-list .testimonial .testimonial-card-content .testimonial header h3 .author-name {
+                    font-weight: 500;
+                    color: rgba(0, 0, 0, 0.87);
+                    font-size: 1.3em; }
+              body.home.homepage div#wrapper div#Homepage section.main .testimonial-list .testimonial .testimonial-card-content .testimonial .feature-description {
+                font-size: 1em;
+                font-weight: 300; }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+.progress-view-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .progress-view-wrapper .progress-indicator {
+    margin: 0 16px;
+    border: 8px solid #333;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    min-width: 24px;
+    width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    height: 24px;
+    max-height: 24px;
+    animation: spin 2s linear infinite; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+#AppPreviewWrapper {
+  width: 550px;
+  min-width: 550px;
+  max-width: 550px;
+  border-left: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column; }
+  #AppPreviewWrapper > header {
+    height: 160px;
+    display: flex;
+    flex-direction: column; }
+    #AppPreviewWrapper > header h2 {
+      color: #1c1f25;
+      margin-top: 48px;
+      margin-left: 24px;
+      font-size: 1.4em;
+      font-weight: 800; }
+    #AppPreviewWrapper > header div.app-preview-tabs {
+      font-size: 0.9em; }
+      #AppPreviewWrapper > header div.app-preview-tabs ol {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        padding: 0;
+        margin: 0; }
+        #AppPreviewWrapper > header div.app-preview-tabs ol li {
+          flex: 1;
+          text-align: center;
+          border-bottom: 1px solid #e8e8e9;
+          transition: all 333ms;
+          padding: 24px 0;
+          cursor: pointer;
+          font-weight: 300; }
+          #AppPreviewWrapper > header div.app-preview-tabs ol li.selected {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.7); }
+  #AppPreviewWrapper div#AppPreview {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    background-color: transparent;
+    background-image: url("img/iphone.png");
+    background-size: auto 550px;
+    background-position: center;
+    background-repeat: no-repeat; }
+    #AppPreviewWrapper div#AppPreview div.preview-screen {
+      height: 414px;
+      width: 232px;
+      background-color: #1e2129;
+      display: flex;
+      border-radius: 1px;
+      overflow: hidden;
+      margin-top: -3px;
+      margin-right: 2px; }
+  #AppPreviewWrapper div#AppPreview_Screen {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    #AppPreviewWrapper div#AppPreview_Screen div.spacer {
+      flex: auto; }
+    #AppPreviewWrapper div#AppPreview_Screen .preview-screen {
+      display: none;
+      position: relative;
+      visibility: hidden; }
+      #AppPreviewWrapper div#AppPreview_Screen .preview-screen.loaded {
+        visibility: visible; }
+      #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding {
+        display: flex; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-controls {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          color: rgba(255, 255, 255, 0.7);
+          display: flex;
+          flex-direction: row; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-controls div.prev-ctrl,
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-controls div.next-ctrl {
+            display: flex;
+            flex-direction: column; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-controls div.prev-ctrl .material-icons,
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-controls div.next-ctrl .material-icons {
+              padding: 16px;
+              cursor: pointer; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-indicator {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 40px;
+          z-index: 2; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-indicator ul.indicators {
+            display: flex;
+            flex-direction: row; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-indicator ul.indicators li.selected span {
+              background-color: white; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding .onboarding-screen-indicator ul.indicators li span {
+              background-color: black;
+              border: 1px solid rgba(255, 255, 255, 0.9);
+              border-radius: 999px;
+              display: inline-block;
+              height: 8px;
+              width: 8px;
+              margin: 8px;
+              transition: background-color 333ms; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding div.onboarding-screens {
+          height: 100%;
+          width: 100%;
+          display: flex; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding div.onboarding-screens div.onboarding-screen {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            flex: auto; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding div.onboarding-screens div.onboarding-screen div.onboarding-screen-content {
+              display: flex;
+              flex-direction: column; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding div.onboarding-screens div.onboarding-screen div.onboarding-screen-content div.onboarding-screen-icon {
+                display: flex;
+                flex-direction: row; }
+                #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding div.onboarding-screens div.onboarding-screen div.onboarding-screen-content div.onboarding-screen-icon span.material-icons {
+                  font-size: 80px;
+                  height: 80px;
+                  width: 80px;
+                  max-height: 80px;
+                  min-height: 80px;
+                  max-width: 80px;
+                  min-width: 80px;
+                  text-shadow: 0px 1px 5px black; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding div.onboarding-screens div.onboarding-screen div.onboarding-screen-content div.onboarding-screen-text {
+                text-align: center;
+                text-shadow: 0px 1px 5px black; }
+                #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding div.onboarding-screens div.onboarding-screen div.onboarding-screen-content div.onboarding-screen-text .onboarding-screen-text-headline {
+                  margin: 8px 0; }
+                #AppPreviewWrapper div#AppPreview_Screen .preview-screen.onboarding div.onboarding-screens div.onboarding-screen div.onboarding-screen-content div.onboarding-screen-text .onboarding-screen-text-text {
+                  font-size: 0.8em;
+                  font-weight: 300;
+                  padding: 0 24px;
+                  color: rgba(255, 255, 255, 0.5); }
+      #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container {
+        display: flex;
+        flex-direction: column;
+        background-color: #eeeeee;
+        width: 100%; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container header {
+          height: 48px;
+          min-height: 48px;
+          background-color: #ebebeb;
+          width: 100%;
+          display: flex;
+          flex-direction: column; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container header div.phone-top-bar {
+            background: transparent url("img/phone-title-bar.png");
+            background-size: 232px;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: row;
+            height: 16px;
+            width: 100%; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container header div.app-top-bar {
+            display: flex;
+            flex-direction: row;
+            height: 32px;
+            width: 100%;
+            align-items: center; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container header div.app-top-bar div.icon-button {
+              padding: 6px;
+              display: flex; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container header div.app-top-bar div.icon-button .material-icons {
+                font-size: 18px; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container header div.app-top-bar div.app-name {
+              font-size: 0.73em;
+              font-weight: 500;
+              color: rgba(0, 0, 0, 0.87);
+              margin-top: 2px; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container div.home-screen-cards {
+          padding: 1px 0px;
+          width: 100%;
+          box-sizing: border-box;
+          overflow-y: scroll; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container div.home-screen-cards ul li.home-screen-card {
+            margin: 2px 3px 5px;
+            background-color: white;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+            border-radius: 0px;
+            overflow: hidden; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container div.home-screen-cards ul li.home-screen-card div.card-hero {
+              flex: auto;
+              background: transparent;
+              background-size: cover;
+              background-repeat: no-repeat; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container div.home-screen-cards ul li.home-screen-card footer {
+              display: flex;
+              flex-direction: row;
+              font-size: 0.7em;
+              padding: 8px 4px;
+              align-items: center; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container div.home-screen-cards ul li.home-screen-card footer div.card-text {
+                padding: 4px;
+                font-weight: 400; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container div.home-screen-cards ul li.home-screen-card footer div.offer-cta-wrapper span.offer-cta {
+                color: #0b8fd2;
+                border: 1px solid;
+                border-radius: 3px;
+                line-height: 20px;
+                display: block;
+                width: 48px;
+                text-align: center;
+                margin-top: -6px;
+                margin-bottom: -6px;
+                padding-top: 3px;
+                font-weight: 400;
+                letter-spacing: 0.03em; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container .home-screen-points {
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+          align-items: center;
+          line-height: 40px;
+          background-color: #fff;
+          font-size: 0.73em;
+          height: 32px;
+          min-height: 32px;
+          font-weight: 400;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container .home-screen-points .points-balance {
+            flex: auto;
+            width: 45%; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container .home-screen-points .cash-balance {
+            flex: auto;
+            width: 45%; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.home-screen-container .home-screen-points .separator {
+            width: 1px;
+            background-color: rgba(0, 0, 0, 0.24);
+            opacity: 1;
+            height: 16px; }
+      #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen {
+        display: flex;
+        flex-direction: column;
+        background-color: #eeeeee; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen header {
+          height: 48px;
+          min-height: 48px;
+          background-color: #ebebeb;
+          width: 100%;
+          display: flex;
+          flex-direction: column; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen header div.phone-top-bar {
+            background: transparent url("img/phone-title-bar.png");
+            background-size: 232px;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: row;
+            height: 16px;
+            width: 100%; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen header div.app-top-bar {
+            display: flex;
+            flex-direction: row;
+            height: 32px;
+            width: 100%;
+            align-items: center; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen header div.app-top-bar div.icon-button {
+              padding: 6px;
+              display: flex; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen header div.app-top-bar div.icon-button .material-icons {
+                font-size: 18px; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen header div.app-top-bar div.app-name {
+              font-size: 0.73em;
+              font-weight: 500;
+              color: rgba(0, 0, 0, 0.87);
+              margin-top: 2px; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen div.home-screen-cards {
+          padding: 1px 0px;
+          width: 100%;
+          box-sizing: border-box;
+          overflow-y: scroll; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen div.home-screen-cards ul li.home-screen-card {
+            margin: 2px 3px 5px;
+            background-color: white;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+            border-radius: 0px;
+            overflow: hidden; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen div.home-screen-cards ul li.home-screen-card div.card-hero {
+              flex: auto;
+              background: transparent;
+              background-size: cover;
+              background-repeat: no-repeat; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen div.home-screen-cards ul li.home-screen-card footer {
+              display: flex;
+              flex-direction: row;
+              font-size: 0.7em;
+              padding: 8px 4px;
+              align-items: center; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen div.home-screen-cards ul li.home-screen-card footer div.card-text {
+                padding: 4px;
+                font-weight: 400; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen div.home-screen-cards ul li.home-screen-card footer div.offer-cta-wrapper span.offer-cta {
+                color: #0b8fd2;
+                border: 1px solid;
+                border-radius: 3px;
+                line-height: 20px;
+                display: block;
+                width: 48px;
+                text-align: center;
+                margin-top: -6px;
+                margin-bottom: -6px;
+                padding-top: 3px;
+                font-weight: 400;
+                letter-spacing: 0.03em; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen .home-screen-points {
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+          align-items: center;
+          line-height: 40px;
+          background-color: #fff;
+          font-size: 0.73em;
+          height: 32px;
+          min-height: 32px;
+          font-weight: 400;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen .home-screen-points .points-balance {
+            flex: auto;
+            width: 45%; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen .home-screen-points .cash-balance {
+            flex: auto;
+            width: 45%; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.home-screen .home-screen-points .separator {
+            width: 1px;
+            background-color: rgba(0, 0, 0, 0.24);
+            opacity: 1;
+            height: 16px; }
+      #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation {
+        position: relative; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay {
+          background-color: rgba(240, 240, 240, 0.9);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav {
+            background: #fff;
+            margin-right: 15%;
+            height: 100%;
+            box-shadow: 0px 0px 60px rgba(100, 100, 100, 0.8); }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav header div.inner {
+              height: 80px;
+              padding: 8px 16px;
+              display: flex;
+              flex-direction: column; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav header div.inner div:first-of-type {
+                display: flex;
+                flex: auto;
+                flex-direction: column; }
+                #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav header div.inner div:first-of-type div.profile-image {
+                  background: url("img/user-profile-img.jpg");
+                  background-size: cover;
+                  background-position: center;
+                  border-radius: 999px;
+                  background-color: white;
+                  height: 52px;
+                  width: 52px;
+                  margin-bottom: 4px; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav header div.inner div:last-of-type {
+                height: 20px; }
+                #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav header div.inner div:last-of-type span.user-display-name {
+                  font-size: 0.71em;
+                  color: white;
+                  font-weight: 500;
+                  text-transform: uppercase; }
+            #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav .side-nav-items {
+              padding-top: 8px;
+              font-size: 0.77em; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav .side-nav-items span.material-icons {
+                font-size: 16px;
+                margin-right: 10px; }
+              #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav .side-nav-items ol {
+                margin-bottom: 0; }
+                #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav .side-nav-items ol li {
+                  display: flex;
+                  flex-direction: row;
+                  padding: 6px 12px;
+                  align-items: center;
+                  font-size: 1em;
+                  font-weight: 300; }
+                  #AppPreviewWrapper div#AppPreview_Screen .preview-screen.side-navigation div.side-nav-overlay .side-nav .side-nav-items ol li a {
+                    color: rgba(0, 0, 0, 0.87);
+                    text-decoration: none;
+                    line-height: 16px; }
+      #AppPreviewWrapper div#AppPreview_Screen .preview-screen.splash-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.splash-screen div.col-center {
+          display: flex;
+          flex-direction: row;
+          align-items: center; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.splash-screen div.center-screen {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.splash-screen div.app-id-icon {
+          display: flex;
+          height: 64px;
+          width: 64px;
+          box-sizing: border-box;
+          background-color: white;
+          border-radius: 8px;
+          box-shadow: 0 9px 30px rgba(0, 0, 0, 0.5);
+          transition: all 333ms;
+          margin-bottom: 32px; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.splash-screen div.app-id-icon #appIdIconImage {
+            height: 64px;
+            width: 64px; }
+          #AppPreviewWrapper div#AppPreview_Screen .preview-screen.splash-screen div.app-id-icon .app-id-icon-placeholder .material-icons {
+            font-size: 32px;
+            height: 32px;
+            width: 32px;
+            min-width: 32px;
+            min-height: 32px;
+            max-width: 32px;
+            max-height: 32px;
+            line-height: 32px;
+            margin: 16px; }
+        #AppPreviewWrapper div#AppPreview_Screen .preview-screen.splash-screen div.app-name {
+          color: white;
+          font-size: 1.3em;
+          font-weight: 500;
+          text-shadow: 0px 1px 5px black; }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+#PaymentModal {
+  /**
+  * https://www.w3schools.com/howto/howto_css_modals.asp
+  */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+  #PaymentModal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 600px;
+    /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    box-shadow: 2px 0px 20px 2px rgba(0, 0, 0, 0.2); }
+    #PaymentModal .modal-content header {
+      display: flex;
+      flex-direction: row;
+      padding: 24px 32px;
+      background-color: rgba(0, 0, 0, 0.1);
+      align-items: center; }
+      #PaymentModal .modal-content header h2 {
+        flex: auto;
+        color: rgba(0, 0, 0, 0.57); }
+      #PaymentModal .modal-content header .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold; }
+        #PaymentModal .modal-content header .close:hover, #PaymentModal .modal-content header .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer; }
+    #PaymentModal .modal-content section.modal-body {
+      padding: 32px; }
+      #PaymentModal .modal-content section.modal-body div#card-errors {
+        color: rgba(255, 0, 0, 0.87);
+        margin-top: 16px; }
+      #PaymentModal .modal-content section.modal-body p {
+        font-weight: 300;
+        margin-bottom: 32px; }
+    #PaymentModal .modal-content footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 32px 32px; }
+      #PaymentModal .modal-content footer div.payment-info {
+        flex: auto;
+        font-size: 1.4em;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.38); }
+        #PaymentModal .modal-content footer div.payment-info span.total-amount {
+          font-weight: 600;
+          color: rgba(0, 0, 0, 0.87); }
+      #PaymentModal .modal-content footer button#ProcessPayment {
+        height: 40px;
+        padding: 0 16px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        border-radius: 5px;
+        background: transparent;
+        cursor: pointer;
+        background: #1e2128;
+        color: white;
+        border: 1px solid #1e2128; }
+
+#PaymentForm div.payment-form-wrapper {
+  display: flex;
+  flex-direction: row; }
+  #PaymentForm div.payment-form-wrapper div.payment-form {
+    flex: auto; }
+    #PaymentForm div.payment-form-wrapper div.payment-form header {
+      margin-bottom: 56px; }
+      #PaymentForm div.payment-form-wrapper div.payment-form header h1 {
+        color: #1c1f25;
+        margin: 0 0 16px;
+        font-size: 1.4em;
+        font-weight: 800; }
+      #PaymentForm div.payment-form-wrapper div.payment-form header p {
+        font-weight: 300;
+        font-size: 1.1em; }
+    #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section {
+      margin: 40px 0;
+      width: 80%; }
+      #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.locations-config {
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.locations-config div:first-of-type {
+          flex: auto; }
+        #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.locations-config div:last-of-type {
+          width: 80px; }
+          #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.locations-config div:last-of-type input {
+            max-width: 100%;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 48px;
+            background: rgba(0, 0, 0, 0.06);
+            border: none;
+            border-radius: 4px; }
+      #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li {
+        display: flex;
+        flex-direction: row;
+        padding: 16px 0;
+        font-weight: 300; }
+        #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li div.item-description {
+          flex: auto; }
+        #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li div.item-price {
+          width: 200px;
+          text-align: right;
+          font-size: 1.1em; }
+          #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li div.item-price span.normal-price {
+            text-decoration: line-through;
+            margin-right: 16px; }
+        #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.locations-line-item div.item-description p.modules-included {
+          display: flex;
+          flex-wrap: wrap;
+          color: rgba(0, 0, 0, 0.37);
+          font-size: 0.77em;
+          margin-top: 4px;
+          letter-spacing: -0.03em; }
+          #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.locations-line-item div.item-description p.modules-included span.label {
+            text-transform: uppercase; }
+          #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.locations-line-item div.item-description p.modules-included span.included-module-display-name {
+            margin-left: 4px; }
+        #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.line-item {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+          #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.line-item div.item-description span.tax-amount {
+            font-size: 0.83em;
+            color: rgba(0, 0, 0, 0.57); }
+        #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-line-items ul.line-items li.lines-total {
+          font-weight: 600; }
+      #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-button-container button#ChoosePaymentMethod {
+        height: 40px;
+        padding: 0 16px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        border-radius: 5px;
+        background: transparent;
+        cursor: pointer;
+        background: #1e2128;
+        color: white;
+        border: 1px solid #1e2128; }
+      #PaymentForm div.payment-form-wrapper div.payment-form section.order-form section.order-button-container p {
+        font-weight: 300;
+        font-size: 0.83em;
+        margin-top: 16px;
+        color: rgba(0, 0, 0, 0.57); }
+  #PaymentForm div.payment-form-wrapper div.app-preview {
+    width: 550px;
+    display: flex; }
+    #PaymentForm div.payment-form-wrapper div.app-preview #AppPreviewWrapper {
+      width: 350px;
+      min-width: 350px;
+      max-width: 350px;
+      border-left: none;
+      display: flex;
+      flex-direction: column; }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+/**
+ * https://stripe.com/docs/stripe-js/elements/quickstart
+ */
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  box-sizing: border-box; }
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df; }
+
+.StripeElement--invalid {
+  border-color: #fa755a; }
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important; }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+#AppOnboardingConfig_Component div.onboarding-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin-top: 40px; }
+  #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    width: 190px;
+    height: 260px;
+    margin-right: 32px;
+    margin-top: 32px;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    padding: 16px;
+    box-sizing: border-box; }
+    #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card:last-of-type {
+      margin-right: 0; }
+    #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card h3 {
+      position: absolute;
+      top: -32px;
+      left: 0px; }
+    #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card input {
+      outline: none; }
+    #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-icon {
+      display: flex;
+      flex-direction: row;
+      height: 124px;
+      margin-bottom: 24px;
+      position: relative; }
+      #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-icon .icon-drawer {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+        background-color: white;
+        position: absolute;
+        top: -200px;
+        left: 0;
+        width: 120px;
+        padding: 16px;
+        border-radius: 5px; }
+        #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-icon .icon-drawer ul li {
+          display: inline-block;
+          cursor: pointer; }
+          #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-icon .icon-drawer ul li:hover {
+            background-color: #c8c8c8; }
+      #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-icon .screen-icon {
+        text-align: center;
+        width: 120px;
+        cursor: pointer; }
+        #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-icon .screen-icon.needs-icon {
+          border: 2px dashed rgba(0, 0, 0, 0.12);
+          border-radius: 9999px;
+          color: rgba(0, 0, 0, 0.57); }
+        #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-icon .screen-icon span.material-icons {
+          height: 100px;
+          font-size: 80px;
+          line-height: 120px; }
+    #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-headline {
+      font-size: 1.1em;
+      max-width: 100%;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 2px dashed rgba(0, 0, 0, 0.12);
+      text-align: center;
+      line-height: 2em;
+      font-weight: 700;
+      margin-bottom: 8px; }
+      #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-headline.has-value {
+        border-color: transparent;
+        line-height: 1em;
+        margin-bottom: 0; }
+    #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-text {
+      font-size: 0.77em;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 2px dashed rgba(0, 0, 0, 0.12);
+      text-align: center;
+      line-height: 2em;
+      color: rgba(0, 0, 0, 0.38); }
+      #AppOnboardingConfig_Component div.onboarding-cards div.onboarding-card .onboarding-screen-text.has-value {
+        border-color: transparent;
+        line-height: 1em; }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+#AppColorScheme_Component div.color-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin-top: 32px; }
+  #AppColorScheme_Component div.color-cards div.color-card {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    width: 190px;
+    margin-right: 32px;
+    background: white;
+    border-radius: 10px;
+    position: relative; }
+    #AppColorScheme_Component div.color-cards div.color-card:last-of-type {
+      margin-right: 0; }
+    #AppColorScheme_Component div.color-cards div.color-card header {
+      padding: 24px 16px 0px; }
+    #AppColorScheme_Component div.color-cards div.color-card footer {
+      padding: 0 14px 14px; }
+      #AppColorScheme_Component div.color-cards div.color-card footer button {
+        width: 100%;
+        border: none;
+        background: black;
+        color: white;
+        line-height: 30px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300; }
+    #AppColorScheme_Component div.color-cards div.color-card div.color-indicator {
+      height: 120px;
+      padding: 16px; }
+      #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.color,
+      #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.text-color {
+        background-color: transparent;
+        height: 100%;
+        width: 100%; }
+      #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.color {
+        border: 2px dashed rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.9em;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.87); }
+        #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.color span:first-of-type {
+          display: flex;
+          flex: auto; }
+        #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.color span:last-of-type {
+          display: flex;
+          flex: auto; }
+      #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.text-color {
+        display: flex;
+        flex-direction: column; }
+        #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.text-color span:first-of-type {
+          display: flex;
+          flex: auto; }
+        #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.text-color span.text-preview {
+          display: flex;
+          padding-top: 8px; }
+          #AppColorScheme_Component div.color-cards div.color-card div.color-indicator div.text-color span.text-preview.large {
+            font-size: 4em; }
+  #AppColorScheme_Component div.color-cards div.color-picker {
+    position: absolute;
+    bottom: -60px;
+    left: 0px;
+    right: 0px;
+    background: white;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 10px; }
+    #AppColorScheme_Component div.color-cards div.color-picker div.color-picker-content {
+      padding: 16px;
+      display: flex; }
+      #AppColorScheme_Component div.color-cards div.color-picker div.color-picker-content div.horizontal-spacer {
+        flex: auto; }
+      #AppColorScheme_Component div.color-cards div.color-picker div.color-picker-content input {
+        width: 60px;
+        display: inline-block;
+        text-transform: uppercase; }
+      #AppColorScheme_Component div.color-cards div.color-picker div.color-picker-content button {
+        display: inline-block;
+        cursor: pointer; }
+        #AppColorScheme_Component div.color-cards div.color-picker div.color-picker-content button.save {
+          width: 44px; }
+        #AppColorScheme_Component div.color-cards div.color-picker div.color-picker-content button.cancel {
+          padding: 0;
+          border: none;
+          background: transparent; }
+
+/**
+ * Tidy Order
+ *
+ * Licensed to: LOKE Digital Pty. Ltd.
+ *
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+#AdditionalDetails div.additional-details-wrapper {
+  display: flex;
+  flex-direction: row; }
+  #AdditionalDetails div.additional-details-wrapper div.additional-details {
+    flex: auto; }
+    #AdditionalDetails div.additional-details-wrapper div.additional-details header {
+      margin-bottom: 16px; }
+      #AdditionalDetails div.additional-details-wrapper div.additional-details header h1 {
+        color: #1c1f25;
+        margin: 0 0 16px;
+        font-size: 1.4em;
+        font-weight: 800; }
+      #AdditionalDetails div.additional-details-wrapper div.additional-details header p {
+        font-weight: 300;
+        font-size: 1.1em; }
+    #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical {
+      list-style-type: none;
+      padding: 0;
+      margin: 24px 0 0; }
+      #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+        background: #fff;
+        border-radius: 10px;
+        display: flex;
+        margin-bottom: 12px;
+        flex-direction: column;
+        padding: 24px; }
+        #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card header h3 {
+          font-size: 1em;
+          font-weight: 500;
+          margin-bottom: 8px; }
+        #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card header p {
+          font-size: 0.9em;
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.57); }
+        #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card div.detail-card-body {
+          display: flex;
+          flex-direction: row; }
+          #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card div.detail-card-body input,
+          #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card div.detail-card-body select {
+            font-size: 1.1em;
+            width: 60%; }
+          #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card div.detail-card-body input {
+            border-width: 0 0 1px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.12);
+            background-color: transparent;
+            font-family: "Roboto", sans-serif;
+            outline: none;
+            color: rgba(0, 0, 0, 0.87);
+            transition: all 333ms;
+            font-weight: 200; }
+            #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card div.detail-card-body input:focus {
+              border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+          #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card div.detail-card-body select {
+            border-width: 0 0 1px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.12);
+            background-color: transparent;
+            font-family: "Roboto", sans-serif;
+            outline: none;
+            color: rgba(0, 0, 0, 0.87);
+            transition: all 333ms;
+            font-weight: 200; }
+            #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical li.detail-card div.detail-card-body select:focus {
+              border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+
+#OrderProgress {
+  display: flex;
+  width: 550px;
+  flex-direction: row; }
+  #OrderProgress span.spacer {
+    flex: auto; }
+  #OrderProgress div.steps-wrapper {
+    display: flex;
+    flex-direction: column; }
+    #OrderProgress div.steps-wrapper ul.steps {
+      flex-direction: column; }
+      #OrderProgress div.steps-wrapper ul.steps li.step {
+        position: relative;
+        width: 200px;
+        margin: 32px 0; }
+        #OrderProgress div.steps-wrapper ul.steps li.step::after {
+          content: '\2193';
+          width: 16px;
+          margin: 16px 92px;
+          color: rgba(0, 0, 0, 0.38); }
+        #OrderProgress div.steps-wrapper ul.steps li.step:last-of-type::after {
+          display: none; }
+        #OrderProgress div.steps-wrapper ul.steps li.step.step-complete div.step-complete-indicator {
+          display: block; }
+        #OrderProgress div.steps-wrapper ul.steps li.step div.step-complete-indicator {
+          display: none;
+          position: absolute;
+          top: -16px;
+          right: 40px;
+          background-color: #43a047;
+          box-shadow: 0px 4px 16px #43a047;
+          color: white;
+          padding: 9px 10px 6px;
+          border-radius: 6px; }
+        #OrderProgress div.steps-wrapper ul.steps li.step div.step-icon {
+          flex-direction: row;
+          display: flex; }
+          #OrderProgress div.steps-wrapper ul.steps li.step div.step-icon span.material-icons {
+            font-size: 64px;
+            line-height: 64px;
+            height: 64px;
+            width: 64px;
+            color: rgba(0, 0, 0, 0.87); }
+        #OrderProgress div.steps-wrapper ul.steps li.step div.step-info {
+          margin-top: 16px; }
+          #OrderProgress div.steps-wrapper ul.steps li.step div.step-info p {
+            color: rgba(0, 0, 0, 0.87);
+            text-align: center;
+            font-size: 0.87em;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: "Proxima Nova", sans-serif; }
+
+#AppCustomSidenav_Component div.custom-sidenav-links {
+  margin-top: 32px; }
+  #AppCustomSidenav_Component div.custom-sidenav-links ol {
+    list-style-type: decimal;
+    padding-left: 24px;
+    margin-bottom: 24px; }
+    #AppCustomSidenav_Component div.custom-sidenav-links ol li {
+      margin-bottom: 8px; }
+      #AppCustomSidenav_Component div.custom-sidenav-links ol li button {
+        margin: 0;
+        border: 0;
+        background: transparent;
+        line-height: 16px;
+        padding: 0;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-left: 8px; }
+      #AppCustomSidenav_Component div.custom-sidenav-links ol li input {
+        vertical-align: middle;
+        font-size: 1em;
+        margin: 0 8px;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.12);
+        background-color: transparent;
+        font-family: "Roboto", sans-serif;
+        outline: none;
+        color: rgba(0, 0, 0, 0.87);
+        transition: all 333ms;
+        font-weight: 200; }
+        #AppCustomSidenav_Component div.custom-sidenav-links ol li input:focus {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.5); }

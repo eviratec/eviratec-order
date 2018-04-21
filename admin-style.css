@@ -1,0 +1,4 @@
+input#stripe_pub_key,
+input#stripe_secret_key,
+input#google_form_url {
+  width: 50%; }

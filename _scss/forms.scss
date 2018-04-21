@@ -1,0 +1,89 @@
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+.form-component {
+  margin-bottom: 40px;
+  header {
+    p {
+      margin-top: 16px;
+      font-weight: 300;
+      color: rgba(0,0,0,0.57);
+      font-size: 0.91em;
+      line-height: 1.4em;
+    }
+    .component-description {
+      display: flex;
+      flex-direction: row;
+      label {
+        color: rgba(0,0,0,0.87);
+      }
+    }
+  }
+  .file-upload-component {
+    margin-top: 32px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    input[type=file] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 55px;
+      min-width: 225px;
+      width: 225px;
+      max-width: 225px;
+      text-indent: 999px;
+      color: transparent;
+      outline: none;
+      cursor: pointer;
+    }
+    .upload-details {
+      font-size: 0.9em;
+      font-weight: 300;
+      margin: 0 16px;
+    }
+  }
+}
+
+button.btn.form-btn {
+  @include order-card-box-shadow();
+  background-color: #fff;
+  color: rgba(0,0,0,0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 0.91em;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  border-radius: 10px;
+  border: none;
+  min-width: 225px;
+  width: 225px;
+  max-width: 225px;
+  height: 55px;
+  box-sizing: border-box;
+  cursor: pointer;
+  span.material-icons {
+    margin-right: 16px;
+  }
+  &:active, &:hover, &:focus {
+    color: rgba(0,0,0,0.87);
+  }
+}

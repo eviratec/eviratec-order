@@ -1,0 +1,212 @@
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+body.home.homepage {
+
+  overflow-y: auto;
+
+  div#wrapper {
+
+    display: flex;
+    flex-direction: column;
+
+    header#header {
+      section#branding {
+        div.toolbar-wrapper {
+          div.logo {
+            border-right: none;
+          }
+        }
+      }
+    }
+
+    div#Homepage {
+
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+      min-height: 800px;
+
+      section {
+        display: flex;
+        flex-direction: row;
+        div.spacer {
+          flex: auto;
+        }
+        div.content-area {
+          width: 1000px;
+        }
+      }
+      section.hero {
+        background: #1d2129;
+        height: 520px;
+        color: rgba(255,255,255,1);
+        div.content-area {
+          display: flex;
+          flex-direction: row;
+          div.main-text-wrapper {
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            flex: auto;
+            padding-right: 40px;
+            div.main-text {
+              margin-bottom: 56px;
+              h1 {
+                color: rgba(255,255,255,1);
+                font-size: 3em;
+                margin-bottom: 24px;
+                font-weight: 300;
+                line-height: 1.1em;
+                strong {
+                  font-weight: 600;
+                }
+              }
+              p {
+                font-weight: 300;
+                font-size: 1.4em;
+              }
+            }
+            div.call-to-action {
+              display: flex;
+              flex-direction: row;
+              margin: 40px 0;
+              align-items: center;
+              div.button-wrapper {
+                a.btn {
+                  @include standard-button();
+                  background: rgba(255,255,255,1);
+                  color: rgba(0,0,0,0.87);
+                  border: none;
+                  display: inline-block;
+                  line-height: 56px;
+                  text-decoration: none;
+                  text-transform: none;
+                  height: 56px;
+                  font-size: 1.2em;
+                  padding: 0 40px;
+                }
+              }
+              div.offer-text {
+                flex: auto;
+                margin: 0 20px;
+                p {
+                  font-size: 1.1em;
+                }
+              }
+            }
+          }
+          div.smartphone {
+            display: flex;
+            position: relative;
+            .hero-cta-container {
+              position: absolute;
+              top: 160px;
+              right: -80px;
+              a {
+                background-color: #00a0ff;
+                border-radius: 999px;
+                height: 160px;
+                width: 160px;
+                display: block;
+                text-align: center;
+                padding: 29px 14px 0;
+                box-sizing: border-box;
+                color: rgba(255,255,255,1);
+                text-decoration: none;
+                font-size: 1.6em;
+                font-weight: 300;
+                box-shadow: 0 5px 20px 2px rgba(0,0,0,0.5);
+                border: 2px solid;
+                .material-icons {
+                  font-size: 32px;
+                  line-height: 32px;
+                  height: 32px;
+                  width: 32px;
+                  min-height: 32px;
+                  min-width: 32px;
+                  max-height: 32px;
+                  max-width: 32px;
+                  display: inline;
+                  vertical-align: middle;
+                  margin-left: -8px;
+                }
+              }
+            }
+            div.smartphone-image {
+              background-color: transparent;
+              background-image: url("img/iphone.png");
+              background-size: 326.5px 660px;
+              background-position: center;
+              width: 326.5px;
+              height: 660px;
+              div.smartphone-bg {
+                background-image: url("img/homepage-phone-bg.png");
+                background-size: cover;
+                background-position: center;
+                height: 497px;
+                width: 279px;
+                margin: 80px 0px 0px 22px;
+              }
+            }
+          }
+        }
+      }
+      section.main {
+        flex: auto;
+        .testimonial-list {
+          margin-top: 24px;
+          .testimonial {
+            .testimonial-card-content {
+              display: flex;
+              .testimonial-icon {
+                margin: 16px 32px 16px 0;
+                border-radius: 9999px;
+                overflow: hidden;
+              }
+              .testimonial {
+                display: flex;
+                flex-direction: column;
+                flex: auto;
+                header {
+                  padding: 24px 0 8px;
+                  h3 {
+                    font-size: 0.9em;
+                    color: rgba(0,0,0,0.57);
+                    font-weight: 300;
+                    .author-name {
+                      font-weight: 500;
+                      color: rgba(0,0,0,0.87);
+                      font-size: 1.3em;
+                    }
+                  }
+                }
+                .feature-description {
+                  font-size: 1em;
+                  font-weight: 300;
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}

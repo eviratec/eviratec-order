@@ -1,0 +1,135 @@
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+#AppColorScheme_Component {
+  div.color-cards {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    margin-top: 32px;
+
+    div.color-card {
+      @include order-card-box-shadow();
+      width: 190px;
+      margin-right: 32px;
+      background: rgba(255,255,255,1);
+      border-radius: 10px;
+      position: relative;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      header {
+        padding: 24px 16px 0px;
+      }
+      footer {
+        padding: 0 14px 14px;
+        button {
+          width: 100%;
+          border: none;
+          background: rgba(0,0,0,1);
+          color: rgba(255,255,255,1);
+          line-height: 30px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-family: "Roboto", sans-serif;
+          font-weight: 300;
+        }
+      }
+      div.color-indicator {
+        height: 120px;
+        padding: 16px;
+        div.color,
+        div.text-color {
+          background-color: transparent;
+          height: 100%;
+          width: 100%;
+        }
+        div.color {
+          border: 2px dashed rgba(0,0,0,0.12);
+          border-radius: 10px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          font-size: 0.9em;
+          font-weight: 300;
+          color: rgba(0,0,0,0.87);
+          span:first-of-type {
+            display: flex;
+            flex: auto;
+          }
+          span:last-of-type {
+            display: flex;
+            flex: auto;
+          }
+        }
+        div.text-color {
+          display: flex;
+          flex-direction: column;
+          span:first-of-type {
+            display: flex;
+            flex: auto;
+          }
+          span.text-preview {
+            display: flex;
+            padding-top: 8px;
+            &.large {
+              font-size: 4em;
+            }
+            &.small {
+
+            }
+          }
+        }
+      }
+    }
+    div.color-picker {
+      position: absolute;
+      bottom: -60px;
+      left: 0px;
+      right: 0px;
+      background: rgba(255,255,255,1);
+      @include order-card-box-shadow();
+      border-radius: 10px;
+      div.color-picker-content {
+        padding: 16px;
+        display: flex;
+        div.horizontal-spacer {
+          flex: auto;
+        }
+        input {
+          width: 60px;
+          display: inline-block;
+          text-transform: uppercase;
+        }
+        button {
+          display: inline-block;
+          cursor: pointer;
+          &.save {
+            width: 44px;
+          }
+          &.cancel {
+            padding: 0;
+            border: none;
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

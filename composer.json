@@ -1,0 +1,10 @@
+{
+    "name": "eviratec/eviratec-order",
+    "authors": [
+        {
+            "name": "Callan Milne",
+            "email": "callan.milne@eviratec.com.au"
+        }
+    ],
+    "require": {}
+}

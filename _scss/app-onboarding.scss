@@ -1,0 +1,121 @@
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+#AppOnboardingConfig_Component {
+  div.onboarding-cards {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    div.onboarding-card {
+      @include order-card-box-shadow();
+      width: 190px;
+      height: 260px;
+      margin-right: 32px;
+      margin-top: 32px;
+      background: rgba(255,255,255,1);
+      border-radius: 10px;
+      position: relative;
+      padding: 16px;
+      box-sizing: border-box;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      h3 {
+        position: absolute;
+        top: -32px;
+        left: 0px;
+      }
+      input {
+        outline: none;
+      }
+      .onboarding-screen-icon {
+        display: flex;
+        flex-direction: row;
+        height: 124px;
+        margin-bottom: 24px;
+        position: relative;
+        .icon-drawer {
+          @include order-card-box-shadow();
+          background-color: rgba(255,255,255,1);
+          position: absolute;
+          top: -200px;
+          left: 0;
+          width: 120px;
+          padding: 16px;
+          border-radius: 5px;
+          ul {
+            li {
+              display: inline-block;
+              cursor: pointer;
+              &:hover {
+                background-color: rgba(200,200,200,1);
+              }
+            }
+          }
+        }
+        .screen-icon {
+          text-align: center;
+          width: 120px;
+          cursor: pointer;
+          &.needs-icon {
+            border: 2px dashed rgba(0,0,0,0.12);
+            border-radius: 9999px;
+            color: rgba(0,0,0,0.57);
+          }
+          span.material-icons {
+            height: 100px;
+            font-size: 80px;
+            line-height: 120px;
+          }
+        }
+      }
+      .onboarding-screen-headline {
+        font-size: 1.1em;
+        max-width: 100%;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 2px dashed rgba(0,0,0,0.12);
+        text-align: center;
+        line-height: 2em;
+        font-weight: 700;
+        margin-bottom: 8px;
+        &.has-value {
+          border-color: transparent;
+          line-height: 1em;
+          margin-bottom: 0;
+        }
+      }
+      .onboarding-screen-text {
+        font-size: 0.77em;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 2px dashed rgba(0,0,0,0.12);
+        text-align: center;
+        line-height: 2em;
+        color: rgba(0,0,0,0.38);
+        &.has-value {
+          border-color: transparent;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+}

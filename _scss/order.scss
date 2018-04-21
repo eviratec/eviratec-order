@@ -1,0 +1,238 @@
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+form#OrderForm {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  ul.order-summary {
+    li {
+      margin-top: 8px;
+      h4 {
+        font-size: 1.1em;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+#AppId_Component {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  margin-bottom: 48px;
+  div.app-id-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 0;
+    margin-top: 0;
+    .icon-upload-advice {
+      font-size: 0.87em;
+      font-weight: 300;
+      color: rgba(0,0,0,0.38);
+      margin-top: 16px;
+    }
+    .app-icon-wrapper {
+      color: rgba(0,0,0,0.58);
+      display: flex;
+      height: 64px;
+      width: 64px;
+      box-sizing: border-box;
+      background-color: rgba(255,255,255,1);
+      border-radius: 8px;
+      box-shadow: 0 9px 30px rgba(0,0,0,0.24);
+      transition: all 333ms;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover {
+        box-shadow: 0 9px 30px rgba(0,0,0,0.36);
+        color: rgba(0,0,0,0.87);
+      }
+      .app-id-icon-image {
+        img {
+          height: 64px;
+          width: 64px;
+        }
+      }
+      .app-id-icon-placeholder .material-icons {
+        font-size: 32px;
+        height: 32px;
+        width: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        max-width: 32px;
+        max-height: 32px;
+        line-height: 32px;
+        margin: 16px;
+      }
+    }
+  }
+  div.app-id-name {
+    display: flex;
+    flex: auto;
+    position: relative;
+    margin-top: 16px;
+    margin-left: 16px;
+    span.character-limit {
+      position: absolute;
+      bottom: -16px;
+      right: 0px;
+      font-size: 0.73em;
+      color: rgba(0,0,0,0.57);
+    }
+    input {
+      font-size: 1.6em;
+      width: 100%;
+      @include form-input-decoration();
+    }
+  }
+}
+
+
+#container.order-step {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  div.step-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex: auto;
+    section.step {
+      flex: auto;
+      background-color: #f7f7f7;
+      padding: 48px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      h2 {
+        font-size: 1.4em;
+        font-weight: 500;
+      }
+      div.app-name-info {
+        display: flex;
+        flex-direction: row;
+      }
+      ol.feature-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 24px 0 0;
+        li.feature {
+          cursor: pointer;
+          &.feature-selected {
+            div.feature-card {
+              background-color: #1e2128;
+              color: rgba(255,255,255,1);
+              div.feature-card-content {
+                .feature {
+                  header {
+                    h3 {
+                      color: rgba(255,255,255,1);
+                    }
+                  }
+                  div.feature-description {
+                    p {
+                      color: rgba(255,255,255,0.7);
+                    }
+                  }
+                }
+              }
+            }
+          }
+          div.feature-card {
+            @include order-card-box-shadow();
+            background: #fff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 12px;
+            overflow: hidden;
+            position: relative;
+            div.feature-card-content {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              .feature-toggle {
+                padding: 0 16px 0 36px;
+                input[type=checkbox] {
+                  position: absolute;
+                  left: -999px;
+                }
+                span.material-icons {
+                  &.feature-selected {
+                    color: #03A9F4;
+                  }
+                }
+              }
+              .feature-icon {
+                padding: 0 36px 0 16px;
+                width: 100px;
+                box-sizing: border-box;
+              }
+              .feature {
+                display: flex;
+                flex-direction: column;
+                flex: auto;
+                header {
+                  display: flex;
+                  flex-direction: row;
+                  padding-top: 24px;
+                  padding-bottom: 8px;
+                  h3 {
+                    margin: 0;
+                    font-weight: 400;
+                  }
+                }
+                div.feature-description {
+                  padding: 0 24px 24px 0;
+                  height: 36px;
+                  p {
+                    margin: 0;
+                    font-size: 0.9em;
+                    color: rgba(0,0,0,0.38);
+                    font-weight: 300;
+                    line-height: 1.3em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#stepFooter {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  box-shadow: 0px 0px 50px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+  button#OrderButton_Back {
+    @include standard-button();
+    border: 1px solid;
+  }
+  button#OrderButton_Skip {
+    @include standard-button();
+    border: 1px solid rgba(255,255,255,1);
+  }
+  button#OrderButton_Continue {
+    @include cta-button();
+  }
+}

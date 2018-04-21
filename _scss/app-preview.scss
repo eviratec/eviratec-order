@@ -1,0 +1,449 @@
+/**
+ * Copyright (c) 2018 Callan Peter Milne
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ * LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ * PERFORMANCE OF THIS SOFTWARE.
+ */
+
+@mixin appPreviewHomeScreen () {
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  header {
+    height: 48px;
+    min-height: 48px;
+    background-color: rgba(235,235,235,1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    div.phone-top-bar {
+      background: transparent url("img/phone-title-bar.png");
+      background-size: 232px;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: row;
+      height: 16px;
+      width: 100%;
+    }
+    div.app-top-bar {
+      display: flex;
+      flex-direction: row;
+      height: 32px;
+      width: 100%;
+      align-items: center;
+      div.icon-button {
+        padding: 6px;
+        display: flex;
+        .material-icons {
+          font-size: 18px;
+        }
+      }
+      div.app-name {
+        font-size: 0.73em;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.87);
+        margin-top: 2px;
+      }
+    }
+  }
+
+  div.home-screen-cards {
+    padding: 1px 0px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    ul {
+      li.home-screen-card {
+        margin: 2px 3px 5px;
+        background-color: white;
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 0px;
+        overflow: hidden;
+        div.card-hero {
+          flex: auto;
+          background: transparent;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        footer {
+          display: flex;
+          flex-direction: row;
+          font-size: 0.7em;
+          padding: 8px 4px;
+          align-items: center;
+          div.card-text {
+            padding: 4px;
+            font-weight: 400;
+          }
+          div.offer-cta-wrapper {
+            span.offer-cta {
+              color: #0b8fd2;
+              border: 1px solid;
+              border-radius: 3px;
+              line-height: 20px;
+              display: block;
+              width: 48px;
+              text-align: center;
+              margin-top: -6px;
+              margin-bottom: -6px;
+              padding-top: 3px;
+              font-weight: 400;
+              letter-spacing: 0.03em;
+            }
+          }
+        }
+      }
+    }
+  }
+  .home-screen-points {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    line-height: 40px;
+    background-color: #fff;
+    font-size: 0.73em;
+    height: 32px;
+    min-height: 32px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    .points-balance {
+      flex: auto;
+      width: 45%;
+    }
+    .cash-balance {
+      flex: auto;
+      width: 45%;
+    }
+    .separator {
+      width: 1px;
+      background-color: rgba(0,0,0,0.24);
+      opacity: 1;
+      height: 16px;
+    }
+  }
+}
+#AppPreviewWrapper {
+
+  width: 550px;
+  min-width: 550px;
+  max-width: 550px;
+  border-left: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  > header {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      color: #1c1f25;
+      margin-top: 48px;
+      margin-left: 24px;
+      font-size: 1.4em;
+      font-weight: 800;
+    }
+    div.app-preview-tabs {
+      font-size: 0.9em;
+      ol {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+          flex: 1;
+          text-align: center;
+          border-bottom: 1px solid rgba(232,232,233,1);
+          transition: all 333ms;
+          padding: 24px 0;
+          cursor: pointer;
+          font-weight: 300;
+          &.selected {
+            border-bottom: 1px solid rgba(0,0,0,0.7);
+          }
+        }
+      }
+    }
+  }
+  div#AppPreview {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    background-color: transparent;
+    background-image: url("img/iphone.png");
+    background-size: auto 550px;
+    background-position: center;
+    background-repeat: no-repeat;
+    div.preview-screen {
+      height: 414px;
+      width: 232px;
+      background-color: #1e2129;
+      display: flex;
+      border-radius: 1px;
+      overflow: hidden;
+      margin-top: -3px;
+      margin-right: 2px;
+    }
+  }
+  div#AppPreview_Screen {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    div.spacer {
+      flex: auto;
+    }
+    .preview-screen {
+      display: none;
+      position: relative;
+      visibility: hidden;
+      &.loaded {
+        visibility: visible;
+      }
+      &.onboarding {
+        display: flex;
+        .onboarding-screen-controls {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          color: rgba(255,255,255,0.7);
+          display: flex;
+          flex-direction: row;
+          div.prev-ctrl,
+          div.next-ctrl {
+            display: flex;
+            flex-direction: column;
+            .material-icons {
+              padding: 16px;
+              cursor: pointer;
+            }
+          }
+        }
+        .onboarding-screen-indicator {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 40px;
+          z-index: 2;
+          ul.indicators {
+            display: flex;
+            flex-direction: row;
+            li {
+              &.selected {
+                span {
+                  background-color: rgba(255,255,255,1);
+                }
+              }
+              span {
+                background-color: rgba(0,0,0,1);
+                border: 1px solid rgba(255,255,255,0.9);
+                border-radius: 999px;
+                display: inline-block;
+                height: 8px;
+                width: 8px;
+                margin: 8px;
+                transition: background-color 333ms;
+              }
+            }
+          }
+        }
+
+        div.onboarding-screens {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          div.onboarding-screen {
+            display: flex;
+            flex-direction: column;
+            color: rgba(255,255,255,1);
+            flex: auto;
+            div.onboarding-screen-content {
+              display: flex;
+              flex-direction: column;
+              div.onboarding-screen-icon {
+                display: flex;
+                flex-direction: row;
+                span.material-icons {
+                  font-size: 80px;
+                  height: 80px;
+                  width: 80px;
+                  max-height: 80px;
+                  min-height: 80px;
+                  max-width: 80px;
+                  min-width: 80px;
+                  text-shadow: 0px 1px 5px rgba(0,0,0,1);
+                }
+              }
+              div.onboarding-screen-text {
+                text-align: center;
+                text-shadow: 0px 1px 5px rgba(0,0,0,1);
+                .onboarding-screen-text-headline {
+                  margin: 8px 0;
+                }
+                .onboarding-screen-text-text {
+                  font-size: 0.8em;
+                  font-weight: 300;
+                  padding: 0 24px;
+                  color: rgba(255,255,255,0.5);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.side-navigation {
+        div.home-screen-container {
+          @include appPreviewHomeScreen();
+          width: 100%;
+        }
+      }
+
+      &.home-screen {
+        @include appPreviewHomeScreen();
+      }
+
+      &.side-navigation {
+        position: relative;
+        div.side-nav-overlay {
+          background-color: rgba(240,240,240, 0.9);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          .side-nav {
+            background: #fff;
+            margin-right: 15%;
+            height: 100%;
+            box-shadow: 0px 0px 60px rgba(100,100,100,0.8);
+            header {
+              div.inner {
+                height: 80px;
+                padding: 8px 16px;
+                display: flex;
+                flex-direction: column;
+                div:first-of-type {
+                  display: flex;
+                  flex: auto;
+                  flex-direction: column;
+                  div.profile-image {
+                    background: url("img/user-profile-img.jpg");
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: 999px;
+                    background-color: white;
+                    height: 52px;
+                    width: 52px;
+                    margin-bottom: 4px;
+                  }
+                }
+                div:last-of-type {
+                  height: 20px;
+                  span.user-display-name {
+                    font-size: 0.71em;
+                    color: rgba(255,255,255,1);
+                    font-weight: 500;
+                    text-transform: uppercase;
+                  }
+                }
+              }
+            }
+            .side-nav-items {
+              padding-top: 8px;
+              font-size: 0.77em;
+              span.material-icons {
+                font-size: 16px;
+                margin-right: 10px;
+              }
+              ol {
+                margin-bottom: 0;
+                li {
+                  display: flex;
+                  flex-direction: row;
+                  padding: 6px 12px;
+                  align-items: center;
+                  font-size: 1em;
+                  font-weight: 300;
+                  a {
+                    color: rgba(0,0,0,0.87);
+                    text-decoration: none;
+                    line-height: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.splash-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div.col-center {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+        div.center-screen {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        div.app-id-icon {
+          display: flex;
+          height: 64px;
+          width: 64px;
+          box-sizing: border-box;
+          background-color: rgba(255,255,255,1);
+          border-radius: 8px;
+          box-shadow: 0 9px 30px rgba(0,0,0,0.5);
+          transition: all 333ms;
+          margin-bottom: 32px;
+          #appIdIconImage {
+            height: 64px;
+            width: 64px;
+          }
+          .app-id-icon-placeholder {
+            .material-icons {
+              font-size: 32px;
+              height: 32px;
+              width: 32px;
+              min-width: 32px;
+              min-height: 32px;
+              max-width: 32px;
+              max-height: 32px;
+              line-height: 32px;
+              margin: 16px;
+            }
+          }
+        }
+        div.app-name {
+          color: white;
+          font-size: 1.3em;
+          font-weight: 500;
+          text-shadow: 0px 1px 5px rgba(0,0,0,1);
+        }
+      }
+    }
+  }
+}
