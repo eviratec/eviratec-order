@@ -252,39 +252,39 @@
               <ol>
                 <li>
                   <span class="material-icons">
-                    place
+                    search
                   </span>
-                  <span>Store Locator</span>
+                  <span>Products</span>
                 </li>
                 <li>
                   <span class="material-icons">
-                    local_offer
+                    place
                   </span>
-                  <span>Voucher</span>
+                  <span>Locations</span>
                 </li>
                 <li>
                   <span class="material-icons">
                     star
                   </span>
-                  <span>Saved Offers</span>
+                  <span>Special Offers</span>
                 </li>
                 <li>
                   <span class="material-icons">
-                    credit_card
+                    shopping_cart
                   </span>
-                  <span>Payment</span>
+                  <span>My Cart</span>
                 </li>
                 <li>
                   <span class="material-icons">
-                    local_dining
+                    mail_outline
                   </span>
-                  <span>My Activity</span>
+                  <span>Contact Us</span>
                 </li>
                 <li>
                   <span class="material-icons">
-                    settings
+                    map
                   </span>
-                  <span>Settings</span>
+                  <span>Shipping &amp; Delivery</span>
                 </li>
               </ol>
             </div>

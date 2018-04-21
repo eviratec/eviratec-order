@@ -57,7 +57,7 @@
     <header>
       <h2>Colour Scheme</h2>
       <div class="component-description">
-        <p>Choose the colours that match your brand. See the results in the preview on the right.</p>
+        <p>Your brand's colour scheme.</p>
       </div>
     </header>
     <div class="color-cards">
@@ -70,7 +70,7 @@
           initialValue: $("input[name=app-text-color]").val(),
           defaultValue: "#242424",
           onColorChange: function () {
-            $(document).trigger("tidy-form:update");
+            $(document).trigger("eviratec-form:update");
           },
         });
         $.taColorCard({
@@ -78,9 +78,9 @@
           $containerEl: $("#AppColorScheme_Component .color-cards"),
           cardTitle: "Primary colour",
           initialValue: $("input[name=app-primary-color]").val(),
-          defaultValue: "#0D47A1",
+          defaultValue: "#2196F3",
           onColorChange: function () {
-            $(document).trigger("tidy-form:update");
+            $(document).trigger("eviratec-form:update");
           },
         });
         $.taColorCard({
@@ -90,7 +90,7 @@
           initialValue: $("input[name=app-secondary-color]").val(),
           defaultValue: "#FFFFFF",
           onColorChange: function () {
-            $(document).trigger("tidy-form:update");
+            $(document).trigger("eviratec-form:update");
           },
         });
       })(jQuery);
@@ -100,9 +100,9 @@
 
   <div id="AppCustomFont_Component" class="form-component">
     <header>
-      <h2>Custom font</h2>
+      <h2>Custom Font</h2>
       <div class="component-description">
-        <p>If your brand has a custom font, upload it here. If you leave it empty we will use the default font.</p>
+        <p>Custom font for your brand.</p>
       </div>
     </header>
     <!-- <p><?php echo $_REQUEST["app-custom-font-url"]; ?></p> -->
@@ -116,7 +116,7 @@
         initialValue: $("input[name=app-custom-font-url]").val(),
         storageId: $("input[name=order-id]").val(),
         onComplete: function (assetUrl) {
-          $(document).trigger("tidy-form:update");
+          $(document).trigger("eviratec-form:update");
         },
       });
     })(jQuery);

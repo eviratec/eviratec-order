@@ -81,7 +81,7 @@
             <ol class="steps">
               <li class="<?php echo join(" ", $steps["step-1"]["class"]); ?>">
                 <a href="/order/step-1">
-                  <span>Site Features</span>
+                  <span>Branding</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
                     <span class="indicator">
