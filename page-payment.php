@@ -102,6 +102,9 @@
               <input id="PricePerLocation"
                 type="hidden"
                 value="<?php echo get_option('eviratec_order_option')['ta_price_per_location']; ?>" />
+              <input id="PricePerMonth"
+                type="hidden"
+                value="<?php echo get_option('eviratec_order_option')['ta_price_per_month']; ?>" />
               <input id="PriceSetup"
                 type="hidden"
                 value="<?php echo get_option('eviratec_order_option')['ta_price_setup']; ?>" />
@@ -119,11 +122,11 @@
               <li class="line-item">
                 <div class="item-description">
                   <p>
-                    Setup cost
+                    Setup cost (one-time)
                   </p>
                   <p class="line-item-desc">
                     <span class="label">Includes:</span>
-                    WordPress Set-up, WooCommerce Set-up, Custom Theme Dev, and SSL Installation
+                    WP + WooCommerce Set-up, Theme Dev, and SSL Installation
                   </p>
                 </div>
                 <div class="item-price normal-price">
@@ -145,7 +148,16 @@
                 <div class="item-description">
                   <p>1x Mobile-first Responsive Online Store</p>
                   <p class="line-item-desc">
-                    <span class="label">Features included:</span>
+                    <span class="label">Includes:</span>
+                    <span class="included-module-display-name">
+                      SSL Certificate
+                    </span>,
+                    <span class="included-module-display-name">
+                      Web Hosting
+                    </span>,
+                    <span class="included-module-display-name">
+                      Technical Support
+                    </span>
                     <?php $i = 0; ?>
                     <?php if ($features->have_posts()) : ?>
                       <?php while ($features->have_posts()) : ?>
@@ -163,7 +175,7 @@
                   </p>
                 </div>
                 <div class="item-price">
-                  &dollar;<span class="amount">99.00</span>
+                  &dollar;<span class="amount"><?php echo get_option('eviratec_order_option')['ta_price_per_month']; ?></span>
                 </div>
               </li>
 
@@ -210,7 +222,7 @@
               Order &amp; Pay Now
             </button>
             <p>
-              Your app will be published for both iOS and Android
+              Your preview site will be ready in 24 hours!
             </p>
           </section>
         </section>
@@ -246,6 +258,7 @@
         var taxApplies = "1" === $("input#TaxApplies").val();
         var taxMultiplier = Number($("input#TaxAmount").val()) / 100;
         var priceSetup = Number($("input#PriceSetup").val());
+        var pricePerMonth = Number($("input#PricePerMonth").val());
         var pricePerLocation = Number($("input#PricePerLocation").val());
 
         $orderNumLocationsEl.change(function () {
@@ -262,6 +275,7 @@
           var numLocations = getNumLocations();
           var total = calcTotal();
           var locTotal = calcPriceLocations();
+          var monTotal = calcPriceMonth();
           var subTotal = calcSubTotal();
           var taxTotal = calcTax(calcSubTotal());
           $locNumDisplayEl.html(numLocations);
@@ -272,6 +286,7 @@
             numLocations: numLocations,
             total: total,
             locTotal: locTotal,
+            monTotal: monTotal,
             subTotal: subTotal,
             taxTotal: taxTotal,
           };
@@ -284,7 +299,7 @@
           return fixNumber(forAmount * taxMultiplier);
         }
         function calcSubTotal () {
-          return fixNumber(calcPriceLocations() + priceSetup);
+          return fixNumber(calcPriceMonth() + calcPriceLocations() + priceSetup);
         }
         function calcTotal () {
           return fixNumber(calcSubTotal() + calcTax(calcSubTotal()));
@@ -299,6 +314,10 @@
 
         function calcPriceLocations () {
           return fixNumber(getNumLocations() * pricePerLocation);
+        }
+
+        function calcPriceMonth () {
+          return fixNumber(pricePerMonth);
         }
 
         function fixNumber (n) {

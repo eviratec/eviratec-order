@@ -32,7 +32,11 @@
         <div class="logo">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
             title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>"
-            rel="home"></a>
+            rel="home">
+            <span>
+              Eviratec
+            </span>
+          </a>
         </div>
         <div style="display:flex;flex:auto;"></div>
 
@@ -84,8 +88,11 @@
                   <span>Branding</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
-                    <span class="indicator">
+                    <span class="indicator done">
                       <span class="material-icons">check</span>
+                    </span>
+                    <span class="indicator editing">
+                      <span class="material-icons">edit</span>
                     </span>
                     <span style="flex:auto;"></span>
                   </span>
@@ -96,8 +103,11 @@
                   <span>Appearance</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
-                    <span class="indicator">
+                    <span class="indicator done">
                       <span class="material-icons">check</span>
+                    </span>
+                    <span class="indicator editing">
+                      <span class="material-icons">edit</span>
                     </span>
                     <span style="flex:auto;"></span>
                   </span>
@@ -108,8 +118,11 @@
                   <span>Navigation</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
-                    <span class="indicator">
+                    <span class="indicator done">
                       <span class="material-icons">check</span>
+                    </span>
+                    <span class="indicator editing">
+                      <span class="material-icons">edit</span>
                     </span>
                     <span style="flex:auto;"></span>
                   </span>
@@ -120,8 +133,11 @@
                   <span>Your Details</span>
                   <span class="indicator-container">
                     <span style="flex:auto;"></span>
-                    <span class="indicator">
+                    <span class="indicator done">
                       <span class="material-icons">check</span>
+                    </span>
+                    <span class="indicator editing">
+                      <span class="material-icons">edit</span>
                     </span>
                     <span style="flex:auto;"></span>
                   </span>

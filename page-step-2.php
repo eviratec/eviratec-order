@@ -17,6 +17,8 @@
 ?>
 <?php get_header( 'order' ); ?>
 
+<?php get_sidebar( 'order' ); ?>
+
 <section id="content" role="main" class="step order-step-content">
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -57,7 +59,7 @@
     <header>
       <h2>Colour Scheme</h2>
       <div class="component-description">
-        <p>Your brand's colour scheme.</p>
+        <p>Your site's colour scheme.</p>
       </div>
     </header>
     <div class="color-cards">
@@ -102,7 +104,7 @@
     <header>
       <h2>Custom Font</h2>
       <div class="component-description">
-        <p>Custom font for your brand.</p>
+        <p>Custom font for your site.</p>
       </div>
     </header>
     <!-- <p><?php echo $_REQUEST["app-custom-font-url"]; ?></p> -->
@@ -124,7 +126,5 @@
   </div>
 
 </section>
-
-<?php get_sidebar( 'order' ); ?>
 
 <?php get_footer( 'order' ); ?>

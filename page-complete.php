@@ -52,13 +52,14 @@ if ("/order/complete" === $_REQUEST["from-page"]) {
       <div class="additional-details">
         <header>
           <h1>
-            Awesome!
+            Order Complete!
           </h1>
           <p>
-            Please fill out the remaining details required to publish your site.
+            You'll receive a confirmation email and a link to your live preview website shortly.
+            <a href="https://www.eviratec.com.au">Return to Eviratec.com.au</a>
           </p>
         </header>
-        <section class="details-form">
+        <!-- <section class="details-form">
 
           <ul class="detail-cards-vertical">
 
@@ -128,7 +129,7 @@ if ("/order/complete" === $_REQUEST["from-page"]) {
 
           </ul>
 
-        </section>
+        </section> -->
       </div>
 
     </div>
@@ -162,7 +163,7 @@ $steps = array(
 );
 ?>
 
-<div id="OrderProgress">
+<!-- <div id="OrderProgress">
   <span class="spacer"></span>
   <div class="steps-wrapper">
     <span class="spacer"></span>
@@ -194,6 +195,6 @@ $steps = array(
     <span class="spacer"></span>
   </div>
   <span class="spacer"></span>
-</div>
+</div> -->
 
-<?php get_footer( 'order-complete' ); ?>
+<?php get_footer(); ?>

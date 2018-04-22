@@ -17,6 +17,8 @@
 ?>
 <?php get_header( 'order' ); ?>
 
+<?php get_sidebar( 'order' ); ?>
+
 <section id="content" role="main" class="step order-step-content">
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -53,101 +55,56 @@
       value="<?php echo esc_attr( stripslashes( $v ) ); ?>">
   <?php endforeach; ?>
 
-  <div id="AppIntroBackground_Component" class="form-component">
+  <div id="CustomerCompanyName_Component" class="form-component input-field-component">
     <header>
-      <h2>Welcome Screen Image</h2>
-      <div class="component-description">
-        <p>Add a background image for the initial loading screen which is shown when customers open your app.</p>
-      </div>
+      <h2>Company Name</h2>
     </header>
-    <!-- <p><?php echo $_REQUEST["app-intro-background-image-url"]; ?></p> -->
-    <div class="image-upload"></div>
-    <script>
-    (function ($) {"use strict";
-      $.taAssetUploadComponent({
-        id: "app-intro-background-image",
-        $el: $("#AppIntroBackground_Component div.image-upload"),
-        category: "image",
-        initialValue: $("input[name=app-intro-background-image-url]").val(),
-        storageId: $("input[name=order-id]").val(),
-        onComplete: function (assetUrl) {
-          $(document).trigger("tidy-form:update");
-        },
-      });
-    })(jQuery);
-    </script>
+    <div class="customer-company-name text-input-wrapper">
+      <input id="CustomerCompanyName_Input"
+        name="customer-company-name"
+        value="<?php echo esc_attr( stripslashes( $_REQUEST["customer-company-name"] ) ); ?>"
+        placeholder="My Online Store Pty. Ltd.">
+    </div>
   </div>
 
-  <div id="AppOnboardingConfig_Component" class="form-component">
+  <div id="CustomerName_Component" class="form-component input-field-component">
     <header>
-      <h2>Welcome Screen Message</h2>
-      <div class="component-description">
-        <p>Design your own welcome message.</p>
-        <div style="flex:auto;"></div>
-        <!-- <p>
-          <label>
-            <input name="use-custom-onboarding"
-              type="checkbox"
-              checked>
-            I want to create custom onboarding
-          </label>
-        </p> -->
-      </div>
+      <h2>Your Name</h2>
     </header>
-    <div class="onboarding-cards"></div>
-    <script>
-    (function ($) {"use strict";
-      $.taOnboardingCard({
-        id: "app-onboarding-card-1",
-        $containerEl: $("#AppOnboardingConfig_Component .onboarding-cards"),
-        cardTitle: "Screen #1",
-        initialValues: {
-          icon: $("input[name=app-onboarding-card-1-icon]").val(),
-          headline: $("input[name=app-onboarding-card-1-headline]").val(),
-          text: $("input[name=app-onboarding-card-1-text]").val(),
-        },
-        defaultValues: {
-          icon: "shopping_cart",
-          headline: "Welcome to our App",
-          text: "Pay with the App and earn rewards",
-        },
-      });
-      $.taOnboardingCard({
-        id: "app-onboarding-card-2",
-        $containerEl: $("#AppOnboardingConfig_Component .onboarding-cards"),
-        cardTitle: "Screen #2",
-        initialValues: {
-          icon: $("input[name=app-onboarding-card-2-icon]").val(),
-          headline: $("input[name=app-onboarding-card-2-headline]").val(),
-          text: $("input[name=app-onboarding-card-2-text]").val(),
-        },
-        defaultValues: {
-          icon: "",
-          headline: "",
-          text: "",
-        },
-      });
-      $.taOnboardingCard({
-        id: "app-onboarding-card-3",
-        $containerEl: $("#AppOnboardingConfig_Component .onboarding-cards"),
-        cardTitle: "Screen #3",
-        initialValues: {
-          icon: $("input[name=app-onboarding-card-3-icon]").val(),
-          headline: $("input[name=app-onboarding-card-3-headline]").val(),
-          text: $("input[name=app-onboarding-card-3-text]").val(),
-        },
-        defaultValues: {
-          icon: "",
-          headline: "",
-          text: "",
-        },
-      });
-    })(jQuery);
-    </script>
+    <div class="customer-name text-input-wrapper">
+      <input id="CustomerName_Input"
+        name="customer-name"
+        value="<?php echo esc_attr( stripslashes( $_REQUEST["customer-name"] ) ); ?>"
+        placeholder="John Smith">
+    </div>
+  </div>
+
+  <div id="CustomerEmail_Component" class="form-component input-field-component">
+    <header>
+      <h2>Contact Email Address</h2>
+    </header>
+    <div class="customer-email text-input-wrapper">
+      <input id="CustomerEmail_Input"
+        name="customer-email"
+        type="email"
+        value="<?php echo esc_attr( stripslashes( $_REQUEST["customer-email"] ) ); ?>"
+        placeholder="you@gmail.com">
+    </div>
+  </div>
+
+  <div id="CustomerPhone_Component" class="form-component input-field-component">
+    <header>
+      <h2>Phone Number</h2>
+    </header>
+    <div class="customer-phone text-input-wrapper">
+      <input id="CustomerPhone_Input"
+        name="customer-phone"
+        type="email"
+        value="<?php echo esc_attr( stripslashes( $_REQUEST["customer-phone"] ) ); ?>"
+        placeholder="+61400123456">
+    </div>
   </div>
 
 </section>
-
-<?php get_sidebar( 'order' ); ?>
 
 <?php get_footer( 'order' ); ?>

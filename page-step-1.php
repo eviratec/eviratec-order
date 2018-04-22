@@ -17,6 +17,8 @@
 ?>
 <?php get_header( 'order' ); ?>
 
+<?php get_sidebar( 'order' ); ?>
+
 <section id="content" role="main" class="step order-step-content">
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -67,6 +69,21 @@
     </div>
   </div>
 
+  <div id="AppId_Component" class="form-component">
+    <header>
+      <h2>Domain Name</h2>
+    </header>
+    <div class="site-domain-name text-input-wrapper">
+      <input id="AppName_Input"
+        name="domain-name"
+        value="<?php echo esc_attr( stripslashes( $_REQUEST["domain-name"] ) ); ?>"
+        placeholder="e.g. my-shop.com">
+      <span class="character-limit">
+        without http(s):// prefix
+      </span>
+    </div>
+  </div>
+
   <div id="SiteIconImage_Component" class="form-component">
     <header>
       <h2>Icon Image</h2>
@@ -79,7 +96,7 @@
     <script>
     (function ($) {"use strict";
       $.taAssetUploadComponent({
-        id: "site-icon-image-url",
+        id: "site-icon-image",
         $el: $("#SiteIconImage_Component div.image-upload"),
         category: "image",
         initialValue: $("input[name=site-icon-image-url]").val(),
@@ -104,7 +121,7 @@
     <script>
     (function ($) {"use strict";
       $.taAssetUploadComponent({
-        id: "site-logo-image-url",
+        id: "site-logo-image",
         $el: $("#SiteLogoImage_Component div.image-upload"),
         category: "image",
         initialValue: $("input[name=site-logo-image-url]").val(),
@@ -117,7 +134,7 @@
     </script>
   </div>
 
-  <h2>Features</h2>
+  <!-- <h2>Features</h2> -->
 
   <?php
   $features = new WP_Query( array(
@@ -129,7 +146,7 @@
   ) );
   ?>
 
-  <?php if ($features->have_posts()) : ?>
+  <?php if ($features->have_posts() && false) : ?>
     <ol class="feature-list">
     <?php while ($features->have_posts()) : ?>
       <?php $features->the_post(); ?>
@@ -232,7 +249,5 @@
   </script>
 
 </section>
-
-<?php get_sidebar( 'order' ); ?>
 
 <?php get_footer( 'order' ); ?>

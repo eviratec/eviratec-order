@@ -74,7 +74,7 @@ body {
   margin: 0; }
 
 h1, h2 {
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Signika Negative', sans-serif;
   font-weight: 500; }
 
 h1, h2, h3 {
@@ -85,22 +85,6 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column; }
 
-@font-face {
-  font-family: "Proxima Nova";
-  font-weight: 100;
-  src: url("fonts/ProximaNova-Light.woff2") format("woff2"); }
-@font-face {
-  font-family: "Proxima Nova";
-  font-weight: 300;
-  src: url("fonts/ProximaNova-Regular.woff2") format("woff2"); }
-@font-face {
-  font-family: "Proxima Nova";
-  font-weight: 500;
-  src: url("fonts/ProximaNova-Bold.woff2") format("woff2"); }
-@font-face {
-  font-family: "Proxima Nova";
-  font-weight: 700;
-  src: url("fonts/ProximaNova-ExtraBold.woff2") format("woff2"); }
 /**
  * Copyright (c) 2018 Callan Peter Milne
  *
@@ -177,7 +161,7 @@ button.btn.form-btn {
   button.btn.form-btn span.material-icons {
     margin-right: 16px; }
   button.btn.form-btn:active, button.btn.form-btn:hover, button.btn.form-btn:focus {
-    color: rgba(0, 0, 0, 0.87); }
+    color: white; }
 
 /**
  * Copyright (c) 2018 Callan Peter Milne
@@ -203,6 +187,31 @@ form#OrderForm {
     form#OrderForm ul.order-summary li h4 {
       font-size: 1.1em;
       font-weight: 300; }
+  form#OrderForm div.form-component.input-field-component div.text-input-wrapper {
+    display: flex;
+    flex: auto;
+    position: relative;
+    margin-top: 16px; }
+    form#OrderForm div.form-component.input-field-component div.text-input-wrapper span.character-limit {
+      position: absolute;
+      bottom: -16px;
+      right: 0px;
+      font-size: 0.73em;
+      color: rgba(0, 0, 0, 0.57); }
+    form#OrderForm div.form-component.input-field-component div.text-input-wrapper input {
+      font-size: 1.6em;
+      width: 100%;
+      border-width: 0 0 1px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.12);
+      background-color: transparent;
+      font-family: "Roboto", sans-serif;
+      outline: none;
+      color: rgba(0, 0, 0, 0.87);
+      transition: all 333ms;
+      font-weight: 200; }
+      form#OrderForm div.form-component.input-field-component div.text-input-wrapper input:focus {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
 
 #AppId_Component {
   margin-bottom: 48px; }
@@ -371,6 +380,7 @@ form#OrderForm {
     border-radius: 2px;
     background: transparent;
     cursor: pointer;
+    font-family: 'Signika Negative', sans-serif;
     border: 1px solid; }
   #stepFooter button#OrderButton_Skip {
     height: 48px;
@@ -380,6 +390,7 @@ form#OrderForm {
     border-radius: 2px;
     background: transparent;
     cursor: pointer;
+    font-family: 'Signika Negative', sans-serif;
     border: 1px solid white; }
   #stepFooter button#OrderButton_Continue {
     height: 48px;
@@ -389,6 +400,7 @@ form#OrderForm {
     border-radius: 2px;
     background: transparent;
     cursor: pointer;
+    font-family: 'Signika Negative', sans-serif;
     background: #1e2128;
     color: white;
     border: 1px solid #1e2128; }
@@ -411,26 +423,36 @@ form#OrderForm {
 .toolbar-wrapper {
   display: flex;
   flex-direction: row;
-  background-color: #1e2128;
+  background-color: #242424;
   color: rgba(255, 255, 255, 0.37);
-  height: 66px;
+  height: 64px;
   box-shadow: 0 2px 20px rgba(30, 33, 40, 0.1);
   position: relative; }
   .toolbar-wrapper .logo {
-    width: 120px;
+    width: 200px;
     border-right: 1px solid #616469;
     background-color: transparent;
     background-image: url("img/logo.png");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50%;
+    background-position: 32px 16px;
+    background-size: 32px;
     position: relative; }
     .toolbar-wrapper .logo a {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0; }
+      bottom: 0;
+      color: white;
+      text-decoration: none;
+      font-family: 'Signika Negative', sans-serif;
+      text-transform: uppercase;
+      font-size: 22px;
+      display: flex; }
+      .toolbar-wrapper .logo a span {
+        margin: 0 24px 0 72px;
+        display: flex;
+        line-height: 64px; }
   .toolbar-wrapper .step-navigation ol.steps {
     display: flex;
     margin: 0;
@@ -444,15 +466,16 @@ form#OrderForm {
       .toolbar-wrapper .step-navigation ol.steps li a {
         display: block;
         padding: 0 24px;
-        line-height: 66px;
+        line-height: 48px;
         color: rgba(255, 255, 255, 0.3);
         text-decoration: none;
         letter-spacing: 0.05em;
         font-size: 0.91em;
-        position: relative; }
+        position: relative;
+        padding-top: 16px; }
         .toolbar-wrapper .step-navigation ol.steps li a span.indicator-container {
           position: absolute;
-          bottom: -10px;
+          top: 12px;
           left: 0;
           right: 0;
           height: 20px;
@@ -460,34 +483,25 @@ form#OrderForm {
           flex-direction: row;
           z-index: 10; }
           .toolbar-wrapper .step-navigation ol.steps li a span.indicator-container span.indicator {
+            position: relative;
             height: 20px;
             width: 20px;
-            background-color: #1e2128;
-            border-radius: 99px;
-            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.12); }
+            display: none; }
+            .toolbar-wrapper .step-navigation ol.steps li a span.indicator-container span.indicator span.material-icons {
+              position: absolute;
+              font-size: 13px;
+              top: 3px;
+              left: 4px;
+              color: white; }
       .toolbar-wrapper .step-navigation ol.steps li.current-step a {
-        color: rgba(255, 255, 255, 0.95); }
-        .toolbar-wrapper .step-navigation ol.steps li.current-step a span.indicator-container span.indicator:after {
-          content: " ";
-          height: 12px;
-          width: 12px;
-          margin: 4px;
-          background-color: #fff;
-          border-radius: 99px;
-          position: absolute;
-          left: 80px; }
-        .toolbar-wrapper .step-navigation ol.steps li.current-step a span.indicator-container span.indicator span.material-icons {
-          display: none; }
+        color: rgba(255, 255, 255, 0.95);
+        background-color: #333; }
+        .toolbar-wrapper .step-navigation ol.steps li.current-step a span.indicator-container span.indicator.editing {
+          display: inline-block; }
       .toolbar-wrapper .step-navigation ol.steps li.previous-step a {
-        color: rgba(255, 255, 255, 0.7); }
-        .toolbar-wrapper .step-navigation ol.steps li.previous-step a span.indicator-container span.indicator {
-          position: relative; }
-          .toolbar-wrapper .step-navigation ol.steps li.previous-step a span.indicator-container span.indicator span.material-icons {
-            position: absolute;
-            font-size: 13px;
-            top: 3px;
-            left: 4px;
-            color: white; }
+        color: rgba(255, 255, 255, 0.5); }
+        .toolbar-wrapper .step-navigation ol.steps li.previous-step a span.indicator-container span.indicator.done {
+          display: inline-block; }
 
 /**
  * Copyright (c) 2018 Callan Peter Milne
@@ -524,9 +538,9 @@ body.home.homepage {
         body.home.homepage div#wrapper div#Homepage section div.content-area {
           width: 1000px; }
       body.home.homepage div#wrapper div#Homepage section.hero {
-        background: #1d2129;
+        background: #f7f7f7;
         height: 520px;
-        color: white; }
+        color: rgba(0, 0, 0, 0.87); }
         body.home.homepage div#wrapper div#Homepage section.hero div.content-area {
           display: flex;
           flex-direction: row; }
@@ -539,8 +553,8 @@ body.home.homepage {
             body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.main-text {
               margin-bottom: 56px; }
               body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.main-text h1 {
-                color: white;
-                font-size: 3em;
+                color: rgba(0, 0, 0, 0.87);
+                font-size: 3.5em;
                 margin-bottom: 24px;
                 font-weight: 300;
                 line-height: 1.1em; }
@@ -552,7 +566,7 @@ body.home.homepage {
             body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.call-to-action {
               display: flex;
               flex-direction: row;
-              margin: 40px 0;
+              margin: 40px 0 64px;
               align-items: center; }
               body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.call-to-action div.button-wrapper a.btn {
                 height: 48px;
@@ -562,16 +576,20 @@ body.home.homepage {
                 border-radius: 2px;
                 background: transparent;
                 cursor: pointer;
-                background: white;
-                color: rgba(0, 0, 0, 0.87);
+                font-family: 'Signika Negative', sans-serif;
+                background: #0091EA;
+                color: white;
                 border: none;
-                display: inline-block;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
                 line-height: 56px;
                 text-decoration: none;
                 text-transform: none;
                 height: 56px;
                 font-size: 1.2em;
-                padding: 0 40px; }
+                padding: 0 32px;
+                font-family: 'Signika Negative', sans-serif; }
               body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.main-text-wrapper div.call-to-action div.offer-text {
                 flex: auto;
                 margin: 0 20px; }
@@ -579,7 +597,8 @@ body.home.homepage {
                   font-size: 1.1em; }
           body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.smartphone {
             display: flex;
-            position: relative; }
+            position: relative;
+            margin-top: 40px; }
             body.home.homepage div#wrapper div#Homepage section.hero div.content-area div.smartphone .hero-cta-container {
               position: absolute;
               top: 160px;
@@ -626,7 +645,8 @@ body.home.homepage {
                 width: 279px;
                 margin: 80px 0px 0px 22px; }
       body.home.homepage div#wrapper div#Homepage section.main {
-        flex: auto; }
+        flex: auto;
+        background-color: #242424; }
         body.home.homepage div#wrapper div#Homepage section.main .testimonial-list {
           margin-top: 24px; }
           body.home.homepage div#wrapper div#Homepage section.main .testimonial-list .testimonial .testimonial-card-content {
@@ -709,37 +729,40 @@ body.home.homepage {
   width: 550px;
   min-width: 550px;
   max-width: 550px;
-  border-left: 1px solid #e8e8e8;
   display: flex;
   flex-direction: column; }
-  #AppPreviewWrapper > header {
-    height: 160px;
+  #AppPreviewWrapper > footer {
+    height: 64px;
     display: flex;
     flex-direction: column; }
-    #AppPreviewWrapper > header h2 {
+    #AppPreviewWrapper > footer h2 {
       color: #1c1f25;
       margin-top: 48px;
       margin-left: 24px;
       font-size: 1.4em;
       font-weight: 800; }
-    #AppPreviewWrapper > header div.app-preview-tabs {
+    #AppPreviewWrapper > footer div.app-preview-tabs {
       font-size: 0.9em; }
-      #AppPreviewWrapper > header div.app-preview-tabs ol {
+      #AppPreviewWrapper > footer div.app-preview-tabs ol {
         display: flex;
         flex-direction: row;
         list-style-type: none;
         padding: 0;
-        margin: 0; }
-        #AppPreviewWrapper > header div.app-preview-tabs ol li {
+        margin: 0;
+        border-top: 1px solid #e8e8e8; }
+        #AppPreviewWrapper > footer div.app-preview-tabs ol li {
           flex: 1;
           text-align: center;
-          border-bottom: 1px solid #e8e8e9;
+          border-bottom: 1px solid #e8e8e8;
           transition: all 333ms;
           padding: 24px 0;
           cursor: pointer;
-          font-weight: 300; }
-          #AppPreviewWrapper > header div.app-preview-tabs ol li.selected {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.7); }
+          font-weight: 300;
+          font-family: 'Signika Negative', sans-serif; }
+          #AppPreviewWrapper > footer div.app-preview-tabs ol li.selected {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+            background-color: #333;
+            color: #fff; }
   #AppPreviewWrapper div#AppPreview {
     display: flex;
     flex: auto;
@@ -1124,11 +1147,9 @@ body.home.homepage {
           height: 64px;
           width: 64px;
           box-sizing: border-box;
-          background-color: white;
           border-radius: 8px;
-          box-shadow: 0 9px 30px rgba(0, 0, 0, 0.5);
           transition: all 333ms;
-          margin-bottom: 32px; }
+          margin-bottom: 16px; }
           #AppPreviewWrapper div#AppPreview_Screen .preview-screen.splash-screen div.app-id-icon #appIdIconImage {
             height: 64px;
             width: 64px; }
@@ -1241,6 +1262,7 @@ body.home.homepage {
         border-radius: 2px;
         background: transparent;
         cursor: pointer;
+        font-family: 'Signika Negative', sans-serif;
         background: #1e2128;
         color: white;
         border: 1px solid #1e2128; }
@@ -1319,6 +1341,7 @@ body.home.homepage {
         border-radius: 2px;
         background: transparent;
         cursor: pointer;
+        font-family: 'Signika Negative', sans-serif;
         background: #1e2128;
         color: white;
         border: 1px solid #1e2128; }
@@ -1611,6 +1634,8 @@ body.home.homepage {
       #AdditionalDetails div.additional-details-wrapper div.additional-details header p {
         font-weight: 300;
         font-size: 1.1em; }
+        #AdditionalDetails div.additional-details-wrapper div.additional-details header p a {
+          color: #0091EA; }
     #AdditionalDetails div.additional-details-wrapper div.additional-details section.details-form ul.detail-cards-vertical {
       list-style-type: none;
       padding: 0;

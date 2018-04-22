@@ -29,8 +29,8 @@ function eviratec_enqueue_styles () {
       "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500"
     );
     wp_enqueue_style(
-      "montserrat-font",
-      "https://fonts.googleapis.com/css?family=Montserrat:700"
+      "signika-negative-font",
+      "https://fonts.googleapis.com/css?family=Signika+Negative:300,400,600|Ubuntu:100,300,400,500|Fira+Mono"
     );
     wp_enqueue_style(
       "eviratec-online-order",

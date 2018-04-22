@@ -27,6 +27,11 @@ form#OrderForm {
       }
     }
   }
+  div.form-component.input-field-component {
+    div.text-input-wrapper {
+      @include text-input-form-field();
+    }
+  }
 }
 
 #AppId_Component {
@@ -80,22 +85,7 @@ form#OrderForm {
   }
   div.app-id-name,
   div.text-input-wrapper {
-    display: flex;
-    flex: auto;
-    position: relative;
-    margin-top: 16px;
-    span.character-limit {
-      position: absolute;
-      bottom: -16px;
-      right: 0px;
-      font-size: 0.73em;
-      color: rgba(0,0,0,0.57);
-    }
-    input {
-      font-size: 1.6em;
-      width: 100%;
-      @include form-input-decoration();
-    }
+    @include text-input-form-field();
   }
 }
 

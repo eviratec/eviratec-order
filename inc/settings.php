@@ -135,6 +135,14 @@ class EviratecOrderSettingsPage
     );
 
     add_settings_field(
+      'ta_price_per_month',
+      'Price Per Month ($)',
+      array( $this, 'ta_price_per_month_callback' ),
+      'eviratec-order-setting-admin',
+      'ta_price_settings'
+    );
+
+    add_settings_field(
       'ta_price_per_location',
       'Price Per Location ($)',
       array( $this, 'ta_price_per_location_callback' ),
@@ -221,6 +229,9 @@ class EviratecOrderSettingsPage
 
     if ( isset( $input['ta_price_setup_normal'] ) )
       $new_input['ta_price_setup_normal'] = sanitize_text_field( $input['ta_price_setup_normal'] );
+
+    if ( isset( $input['ta_price_per_month'] ) )
+      $new_input['ta_price_per_month'] = sanitize_text_field( $input['ta_price_per_month'] );
 
     if ( isset( $input['ta_price_per_location'] ) )
       $new_input['ta_price_per_location'] = sanitize_text_field( $input['ta_price_per_location'] );
@@ -349,6 +360,17 @@ class EviratecOrderSettingsPage
     printf(
       '<input type="number" id="ta_price_per_location" name="eviratec_order_option[ta_price_per_location]" value="%s" />',
       isset( $this->options['ta_price_per_location'] ) ? esc_attr( $this->options['ta_price_per_location']) : ''
+    );
+  }
+
+  /**
+   * Get the settings option array and print one of its values
+   */
+  public function ta_price_per_month_callback()
+  {
+    printf(
+      '<input type="number" id="ta_price_per_month" name="eviratec_order_option[ta_price_per_month]" value="%s" />',
+      isset( $this->options['ta_price_per_month'] ) ? esc_attr( $this->options['ta_price_per_month']) : ''
     );
   }
 

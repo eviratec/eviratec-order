@@ -35,7 +35,7 @@ function eviratec_enqueue_scripts () {
     "eviratec-order-js",
     get_stylesheet_directory_uri() . "/eviratec-order.min.js",
     array( "jquery", "stripe-v3-js" ),
-    "1.0.13",
+    "1.0.1",
     false
   );
   wp_enqueue_script(

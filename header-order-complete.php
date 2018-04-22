@@ -32,7 +32,11 @@
         <div class="logo">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
             title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>"
-            rel="home"></a>
+            rel="home">
+            <span>
+              Eviratec
+            </span>
+          </a>
         </div>
         <div style="display:flex;flex:auto;"></div>
         <div style="width:100px;">

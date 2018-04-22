@@ -24,6 +24,26 @@ Eviratec Online Order WordPress Theme © 2018 Callan Peter Milne
   border-radius: 2px;
   background: transparent;
   cursor: pointer;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+@mixin text-input-form-field () {
+  display: flex;
+  flex: auto;
+  position: relative;
+  margin-top: 16px;
+  span.character-limit {
+    position: absolute;
+    bottom: -16px;
+    right: 0px;
+    font-size: 0.73em;
+    color: rgba(0,0,0,0.57);
+  }
+  input {
+    font-size: 1.6em;
+    width: 100%;
+    @include form-input-decoration();
+  }
 }
 
 @mixin cta-button () {

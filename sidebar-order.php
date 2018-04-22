@@ -17,23 +17,6 @@
 ?>
 <aside id="AppPreviewWrapper" role="complementary" class="app-preview">
 
-  <?php if (!is_page("payment")) : ?>
-  <header>
-    <div>
-      <h2>Mobile Preview</h2>
-    </div>
-    <div style="flex:auto;"></div>
-    <div class="app-preview-tabs">
-      <ol>
-        <li data-screen-id="splash-screen">Splash Screen</li>
-        <li data-screen-id="home-screen">Home Screen</li>
-        <li data-screen-id="side-navigation">Side Menu</li>
-        <li data-screen-id="onboarding">Welcome Screen</li>
-      </ol>
-    </div>
-  </header>
-  <?php endif; ?>
-
   <!-- app preview -->
   <div id="AppPreview">
 
@@ -82,12 +65,12 @@
             </div>
             <div class="spacer"></div>
             <div class="app-name">
-              Your App Name
+              Your Store Name
             </div>
             <div class="spacer"></div>
             <div class="icon-button">
               <span class="material-icons">
-                notifications
+                shopping_basket
               </span>
             </div>
           </div>
@@ -159,12 +142,12 @@
               </div>
               <div class="spacer"></div>
               <div class="app-name">
-                Your App Name
+                Your Store Name
               </div>
               <div class="spacer"></div>
               <div class="icon-button">
                 <span class="material-icons">
-                  notifications
+                  shopping_basket
                 </span>
               </div>
             </div>
@@ -228,7 +211,7 @@
               <div class="inner">
                 <div>
                   <div style="flex:auto;"></div>
-                  <div class="profile-image"></div>
+
                 </div>
                 <div>
                   <span class="user-display-name">
@@ -405,6 +388,23 @@
 
   </div>
 
+  <?php if (!is_page("payment")) : ?>
+  <footer>
+    <!-- <div>
+      <h2>Mobile Preview</h2>
+    </div> -->
+    <div style="flex:auto;"></div>
+    <div class="app-preview-tabs">
+      <ol>
+        <li data-screen-id="splash-screen">Home</li>
+        <li data-screen-id="home-screen">Search Page</li>
+        <li data-screen-id="side-navigation">Side Menu</li>
+        <li data-screen-id="onboarding">Product Page</li>
+      </ol>
+    </div>
+  </footer>
+  <?php endif; ?>
+
   <script>
   (function ($) {
     "use strict";
@@ -535,7 +535,7 @@
         updatePreview();
       });
 
-      $("#AppPreviewWrapper header div.app-preview-tabs ol li").each(function(i, el) {
+      $("#AppPreviewWrapper footer div.app-preview-tabs ol li").each(function(i, el) {
         var $el = $(el);
         var screenId = $el.attr("data-screen-id");
         $el.click(function () {
@@ -552,7 +552,7 @@
       newFields(form.serializeArray());
 
       // App Icon & Identification
-      setAppIdIcon(getField("app-id-icon-url"));
+      setAppIdIcon(getField("site-icon-image-url"));
       setAppName(getField("app-name"));
 
       // App Colors
@@ -741,7 +741,7 @@
     }
 
     function clearAppName () {
-      setAppName("Your App Name");
+      setAppName("Your Store Name");
     }
 
     /** Onboarding Screens **/
@@ -776,11 +776,11 @@
     }
 
     function clearSelectedTab () {
-      $("#AppPreviewWrapper header div.app-preview-tabs ol li").removeClass("selected");
+      $("#AppPreviewWrapper footer div.app-preview-tabs ol li").removeClass("selected");
     }
 
     function selectTab (screenId) {
-      $("#AppPreviewWrapper header div.app-preview-tabs ol li[data-screen-id=" + screenId + "]").toggleClass("selected");
+      $("#AppPreviewWrapper footer div.app-preview-tabs ol li[data-screen-id=" + screenId + "]").toggleClass("selected");
     }
 
   })(jQuery);

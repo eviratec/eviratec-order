@@ -197,7 +197,7 @@
       uploadDetails.setRemotePath(uploadDisplayText(initialValue));
 
       $.ltS3Upload({
-        s3Bucket: "https://s3-ap-southeast-2.amazonaws.com/tidy-loke-preview-eviratec-software/",
+        s3Bucket: "https://s3-ap-southeast-2.amazonaws.com/upload-eviratec-com/",
         containerEl: $el,
         photoUrlEl: dataInputElement.$el,
         uploadInputEl: fileInputElement.$el,

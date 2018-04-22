@@ -191,7 +191,7 @@
       $.post(
         ajaxurl,
         {
-          action: 'tidy_process_order_payment',
+          action: 'eviratec_process_order_payment',
           data: {
             order_id: $("input[name=order-id]").val(),
             order_data: $("form#OrderForm").serializeArray(),
@@ -234,7 +234,7 @@
       $processPaymentButtonEl.show();
       $progressEl.hide();
     }
-  })(jQuery, Stripe, tidy_ajax_url);
+  })(jQuery, Stripe, eviratec_ajax_url);
 </script>
 
 

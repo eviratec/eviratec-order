@@ -33,10 +33,10 @@
     <div>
     <?php if (!is_page("payment")) : ?>
       <?php if (!is_page("step-1") && !is_page("step-4")) : ?>
-        <button id="OrderButton_Skip"
+        <!-- <button id="OrderButton_Skip"
           class="btn primary-btn">
           Skip
-        </button>
+        </button> -->
       <?php endif; ?>
       <button id="OrderButton_Continue"
         class="btn primary-btn"

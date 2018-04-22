@@ -51,9 +51,9 @@ body.home.homepage {
         }
       }
       section.hero {
-        background: #1d2129;
+        background: #f7f7f7;
         height: 520px;
-        color: rgba(255,255,255,1);
+        color: rgba(0,0,0,0.87);
         div.content-area {
           display: flex;
           flex-direction: row;
@@ -66,8 +66,8 @@ body.home.homepage {
             div.main-text {
               margin-bottom: 56px;
               h1 {
-                color: rgba(255,255,255,1);
-                font-size: 3em;
+                color: rgba(0,0,0,0.87);
+                font-size: 3.5em;
                 margin-bottom: 24px;
                 font-weight: 300;
                 line-height: 1.1em;
@@ -83,21 +83,24 @@ body.home.homepage {
             div.call-to-action {
               display: flex;
               flex-direction: row;
-              margin: 40px 0;
+              margin: 40px 0 64px;
               align-items: center;
               div.button-wrapper {
                 a.btn {
                   @include standard-button();
-                  background: rgba(255,255,255,1);
-                  color: rgba(0,0,0,0.87);
+                  background: #0091EA;
+                  color: rgba(255,255,255,1);
                   border: none;
-                  display: inline-block;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
                   line-height: 56px;
                   text-decoration: none;
                   text-transform: none;
                   height: 56px;
                   font-size: 1.2em;
-                  padding: 0 40px;
+                  padding: 0 32px;
+                  font-family: 'Signika Negative', sans-serif;
                 }
               }
               div.offer-text {
@@ -112,6 +115,7 @@ body.home.homepage {
           div.smartphone {
             display: flex;
             position: relative;
+            margin-top: 40px;
             .hero-cta-container {
               position: absolute;
               top: 160px;
@@ -167,6 +171,7 @@ body.home.homepage {
       }
       section.main {
         flex: auto;
+        background-color: #242424;
         .testimonial-list {
           margin-top: 24px;
           .testimonial {

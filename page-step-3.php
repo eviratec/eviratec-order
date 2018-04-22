@@ -17,6 +17,8 @@
 ?>
 <?php get_header( 'order' ); ?>
 
+<?php get_sidebar( 'order' ); ?>
+
 <section id="content" role="main" class="step order-step-content">
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -55,9 +57,9 @@
 
   <div id="AppCustomSidenav_Component" class="form-component">
     <header>
-      <h2>Custom Side Menu</h2>
+      <h2>Custom Pages</h2>
       <div class="component-description">
-        <p>If you want to show something from your website in the app: you can add a custom link in your menu.</p>
+        <p>Add custom pages to your site.</p>
       </div>
     </header>
     <div class="custom-sidenav-links"></div>
@@ -98,7 +100,5 @@
   </div>
 
 </section>
-
-<?php get_sidebar( 'order' ); ?>
 
 <?php get_footer( 'order' ); ?>

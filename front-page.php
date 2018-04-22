@@ -32,7 +32,11 @@
           <div class="logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
               title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>"
-              rel="home"></a>
+              rel="home">
+              <span>
+                Eviratec
+              </span>
+            </a>
           </div>
           <div style="display:flex;flex:auto;"></div>
           <div style="width:100px;">
@@ -60,7 +64,8 @@
             <div class="call-to-action">
               <div class="button-wrapper">
                 <a class="btn" href="/order/step-1/">
-                  Build One Now
+                  <span>Build One Now</span>
+                  <span class="material-icons">chevron_right</span>
                 </a>
               </div>
               <div class="offer-text">
@@ -74,7 +79,7 @@
             <div class="smartphone-image">
               <div class="smartphone-bg"></div>
             </div>
-            <div class="hero-cta-container">
+            <!-- <div class="hero-cta-container">
               <a href="/order/step-1/"
                 title="Get started">
                 Start building your web<br>store
@@ -82,7 +87,7 @@
                   chevron_right
                 </span>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="spacer"></div>
