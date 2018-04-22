@@ -79,7 +79,7 @@
         value="<?php echo esc_attr( stripslashes( $_REQUEST["domain-name"] ) ); ?>"
         placeholder="e.g. my-shop.com">
       <span class="character-limit">
-        without http(s):// prefix
+        
       </span>
     </div>
   </div>

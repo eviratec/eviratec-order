@@ -76,20 +76,21 @@
           </div>
         </header>
         <div class="home-screen-cards">
-          <ul style="text-align: center;">
-            <li style="margin-bottom: 40px;">
-              <a href="#" style="text-align: center;padding-top: 20px;padding-bottom: 20px;display: block;text-decoration: none;color: inherit;">
-                <img style="height:100px;width:100%;margin-bottom: 16px;" src="">
-                <h2 style="font-weight: 600;">Example Product 1</h2>
-                <span class="onsale" style="margin: 8px;display: inline-block;">Sale!</span>
-                <span class="price" style="display: block;">
-                  <del style="color: rgba(0,0,0,0.38);">
-                    <span class="" style="color: rgba(0,0,0,0.38);">
+          <ul>
+            <li>
+              <a href="#"
+                style="text-align: center;padding-top: 20px;padding-bottom: 20px;display: block;">
+                <img style="height:100px;width:100%;" src="">
+                <h2>Example Product 1</h2>
+                <span class="onsale">Sale!</span>
+                <span class="price">
+                  <del>
+                    <span class="">
                       <span class="">$</span>
                       99.99
                     </span>
                   </del>
-                  <ins style="margin-left: 8px;text-decoration: none;font-size: 0.9em;">
+                  <ins>
                     <span class="">
                       <span class="">$</span>
                       49.99
@@ -101,19 +102,20 @@
                 Add to cart
               </a>
             </li>
-            <li style="margin-bottom: 40px;">
-              <a href="#" style="text-align: center;padding-top: 20px;padding-bottom: 20px;display: block;text-decoration: none;color: inherit;">
-                <img style="height:100px;width:100%;margin-bottom: 16px;" src="">
-                <h2 style="font-weight: 600;">Example Product 1</h2>
-                <span class="onsale" style="margin: 8px;display: inline-block;">Sale!</span>
-                <span class="price" style="display: block;">
-                  <del style="color: rgba(0,0,0,0.38);">
-                    <span class="" style="color: rgba(0,0,0,0.38);">
+            <li>
+              <a href="#"
+                style="text-align: center;padding-top: 20px;padding-bottom: 20px;display: block;">
+                <img style="height:100px;width:100%;" src="">
+                <h2>Example Product 1</h2>
+                <span class="onsale">Sale!</span>
+                <span class="price">
+                  <del>
+                    <span class="">
                       <span class="">$</span>
                       99.99
                     </span>
                   </del>
-                  <ins style="margin-left: 8px;text-decoration: none;font-size: 0.9em;">
+                  <ins>
                     <span class="">
                       <span class="">$</span>
                       49.99
@@ -125,19 +127,20 @@
                 Add to cart
               </a>
             </li>
-            <li style="margin-bottom: 40px;">
-              <a href="#" style="text-align: center;padding-top: 20px;padding-bottom: 20px;display: block;text-decoration: none;color: inherit;">
-                <img style="height:100px;width:100%;margin-bottom: 16px;" src="">
-                <h2 style="font-weight: 600;">Example Product 1</h2>
-                <span class="onsale" style="margin: 8px;display: inline-block;">Sale!</span>
-                <span class="price" style="display: block;">
-                  <del style="color: rgba(0,0,0,0.38);">
-                    <span class="" style="color: rgba(0,0,0,0.38);">
+            <li>
+              <a href="#"
+                style="text-align: center;padding-top: 20px;padding-bottom: 20px;display: block;">
+                <img style="height:100px;width:100%;" src="">
+                <h2>Example Product 1</h2>
+                <span class="onsale">Sale!</span>
+                <span class="price">
+                  <del>
+                    <span class="">
                       <span class="">$</span>
                       99.99
                     </span>
                   </del>
-                  <ins style="margin-left: 8px;text-decoration: none;font-size: 0.9em;">
+                  <ins>
                     <span class="">
                       <span class="">$</span>
                       49.99
